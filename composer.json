@@ -1,4 +1,9 @@
 {
+    "autoload" : {
+        "psr-4": {
+            "App\\": "application/class/"
+        }
+    },
     "require": {
         "twig/twig": "^3.0"
     }
