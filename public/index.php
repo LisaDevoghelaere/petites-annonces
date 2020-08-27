@@ -17,7 +17,7 @@ $router->setBasePath('');
     
     $router->map('GET', '/', function () {
 
-        echo 'page index.php';
+        // echo 'page index.php';
 
         $loader = new \Twig\Loader\FilesystemLoader('../application/template');
         $twig = new \Twig\Environment($loader, [
