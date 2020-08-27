@@ -2,6 +2,63 @@
 
 namespace App;
 
+
+
+class Annonce{
+    
+    if(isset($_POST['ann_unique_id']) && !empty($_POST['ann_unique_id'])){
+        $id = $_POST['ann_unique_id'];
+    }else{
+        echo "Erreur";
+        return;
+    }
+
+    //Connexion
+    $base = new Connexion();
+
+    //SHOW POST
+    $req = $base->q(
+                    "SELECT
+                        pann_titre,
+                        p.description,
+                        p.picture,
+                        p.date_validation,
+                        p.user_mail,
+                        p.user_name,
+                        p.user_firstname,
+                        p.user_phone,
+                        p.category_id,
+                        cat.name as category_name
+                    FROM post as p
+                    INNER JOIN category cat ON p.category_id = cat.ID
+                    WHERE p.id LIKE :id",
+        array(array('id',$id,\PDO::PARAM_STR)));
+
+    echo json_encode($req);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public function Validation(){
     // Nom
     if(isset($_POST['usr_nom']) && !empty($_POST['usr_nom'])){
