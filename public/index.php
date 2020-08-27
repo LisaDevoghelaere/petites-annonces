@@ -5,6 +5,7 @@ ini_set('display_startup_errors', TRUE);
 
 require '../vendor/autoload.php';
 
+
 // Le routeur
 $uri = $_SERVER['REQUEST_URI'];
 // créer une instance
@@ -17,7 +18,6 @@ $router->setBasePath('');
     
     $router->map('GET', '/', function () {
 
-        echo 'page index.php';
 
         $loader = new \Twig\Loader\FilesystemLoader('../application/template');
         $twig = new \Twig\Environment($loader, [
@@ -32,18 +32,18 @@ $router->setBasePath('');
             $sth->execute();
             return $sth;
         }
-        
+        // render template
         $template = $twig->load('index.html.twig');
         echo $template->render();
     });
 
 
     
-    // Page de l'annonce sélectionnée
-    $router->map('GET', '/annonce-[*:slug]-[i:id]', function ($slug, $id) {
-        echo "Visualisation de l'annonce: $slug qui a l'index: $id";
+    // // Page de l'annonce sélectionnée
+    // $router->map('GET', '/annonce-[*:slug]-[i:id]', function ($slug, $id) {
+    //     echo "Visualisation de l'annonce: $slug qui a l'index: $id";
         
-    });
+    // });
 
 
 // Lancer les map du routeur
