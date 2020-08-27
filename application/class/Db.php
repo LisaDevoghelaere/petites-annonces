@@ -1,9 +1,11 @@
 <?php
 
+namespace App;
+
 class Connexion {
 	private $login;
 	private $password;
-	private $connection;
+	private $connect;
 
 	public function __construct(){
 		$this->login = 'root';
@@ -22,7 +24,7 @@ class Connexion {
                  );
 			$bdd->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_WARNING);
 			$bdd->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
-			$this->connection = $bdd;
+			$this->connect = $bdd;
 		}
 		catch (\PDOException $e)
 		{
@@ -32,7 +34,7 @@ class Connexion {
 	}
 
 	public function q($sql,Array $cond = null){
-		$stmt = $this->connec->prepare($sql);
+		$stmt = $this->connect->prepare($sql);
 
 		if($cond){
 			foreach ($cond as $v) {
