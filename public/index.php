@@ -1,7 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-ini_set('display_startup_errors', TRUE);
+
+use App\Connexion;
 
 require '../vendor/autoload.php';
 
@@ -27,7 +26,12 @@ $router->setBasePath('');
         $twig->addExtension(new \Twig\Extension\DebugExtension());
 
         function liste_annonces(){
-            $sql = "SELECT ann_titre, ann_description, ann_prix, ann_image_url, ann_date_validation, usr_nom,  cat_libelle FROM annonce INNER JOIN categorie ON categorie_id = cat_id INNER JOIN utilisateur ON id = utilisateur_id";
+
+
+            //Connexion
+            $base = new Connexion();
+
+            $base->q( "SELECT ann_titre, ann_description, ann_prix, ann_image_url, ann_date_validation, usr_nom,  cat_libelle FROM annonce INNER JOIN categorie ON categorie_id = cat_id INNER JOIN utilisateur ON id = utilisateur_id");
             $sth = $dbh->prepare($sql);  
             $sth->execute();
             return $sth;
