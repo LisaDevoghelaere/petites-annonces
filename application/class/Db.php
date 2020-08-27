@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Connexion {
+class Db {
 	private $login;
 	private $password;
 	private $connect;

@@ -1,6 +1,6 @@
 <?php
 
-use App\Connexion;
+
 
 require '../vendor/autoload.php';
 
@@ -16,29 +16,7 @@ $router->setBasePath('');
     // Page Liste des annonces index.html.twig
     
     $router->map('GET', '/', function () {
-
-
-        $loader = new \Twig\Loader\FilesystemLoader('../application/template');
-        $twig = new \Twig\Environment($loader, [
-            'cache'=> '../application/cache',
-            'debug' => true,
-        ]);
-        $twig->addExtension(new \Twig\Extension\DebugExtension());
-
-        function liste_annonces(){
-
-
-            //Connexion
-            $base = new Connexion();
-
-            $base->q( "SELECT ann_titre, ann_description, ann_prix, ann_image_url, ann_date_validation, usr_nom,  cat_libelle FROM annonce INNER JOIN categorie ON categorie_id = cat_id INNER JOIN utilisateur ON id = utilisateur_id");
-            $sth = $dbh->prepare($sql);  
-            $sth->execute();
-            return $sth;
-        }
-        // render template
-        $template = $twig->load('index.html.twig');
-        echo $template->render();
+        \App\Home::homePage();
     });
 
 
