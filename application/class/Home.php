@@ -6,8 +6,8 @@ class Home{
     public static function homePage(){
 
         $liste = self::liste_annonces();
-        print_r ($liste);
-        die();
+        // print_r ($liste);
+        // die();
         $loader = new \Twig\Loader\FilesystemLoader('../application/template');
         $twig = new \Twig\Environment($loader, [
             'cache'=> '../application/cache',
@@ -17,8 +17,10 @@ class Home{
 
         
         // render template
-        $template = $twig->load('index.html.twig');
-        echo $template->render();
+        $template = $twig->load('home.html.twig');
+        echo $template->render(array(
+            'liste'=> $liste
+        ));
     }
 
     private static function liste_annonces(){
