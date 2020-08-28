@@ -1,22 +1,28 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+{% for annonce in liste %}
+<a href="Annonce.php?Annonce.php=1&id={{ annonce.id }}">
 <div class="card mb-3" style="max-width: 540px;">
     <div class="row no-gutters">
       <div class="col-md-4">
-        <img src="../../public/media/logo/motif-popy.png" class="card-img" alt="...">
+        <img src="{{annonce.ann_image_url}}../../public/media/logo/motif-popy.png" class="card-img" alt="">
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          {% for annonce in liste %}
-          <h5 class="card-title">{{ annonce.ann_titre }}</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          {% endfor %}
+          <h5 class="card-title">{{ annonce.ann_titre }}</h5>
+          <p class="card-text text-truncate">{{annonce.ann_description}}</p>
+          <p class="card-text">{{annonce.ann_prix}}</p>
+          
         </div>
       </div>
     </div>
   </div>
-
+  </a>
+{% endfor %}
 {% endblock content %}
