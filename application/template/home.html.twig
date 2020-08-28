@@ -1,6 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
+{% for element in liste %}
 <div class="card mb-3" style="max-width: 540px;">
     <div class="row no-gutters">
       <div class="col-md-4">
@@ -8,13 +9,13 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h3 class="card-title">Robe 10 ans{{ann_titre}}</h3>
-          <p class="card-text">Robe longue d'été. Rouge à points dorés, très bon état car très peu portée...</p>
+          <h3 class="card-title">{{ann_titre}}</h3>
+          <p class="card-text">{{ann_description}}</p>
           
-          <p class="card-text">5€</p>
+          <p class="card-text">{{ann_prix}}</p>
         </div>
       </div>
     </div>
   </div>
-
+{% endfor %}
 {% endblock content %}
