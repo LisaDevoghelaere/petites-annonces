@@ -2,23 +2,45 @@
 
 {% block content %}
 <form action="">
-    <label for="">Titre</label>
-    <input type="text">
-    <label for="">Catégorie</label>
-    <input type="select">
-    <label for="">Description</label>
-    <input type="text">
-    <label for="">Prix</label>
-    <input type="text">
-    <label for="">Votre Nom</label>
-    <input type="text">
-    <label for="">Prénom</label>
-    <input type="text">
-    <label for="">Courriel</label>
-    <input type="text">
-    <label for="">Téléphone</label>
-    <input type="text">
+<div class="form-group">
+        <label for="exampleFormControlInput1">Titre</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Robe de mage lvl 80">
+</div>
+<div class="form-group">
+        <label for="">Catégorie</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+</div>
+<div class="form-group">
+        <label for="exampleFormControlTextarea1">Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+    <div class="form-group">
+        <label for="">Prix</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="50 Gallions">
+    </div>
+<div class="form-group">
+        <label for="">Votre Nom</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Potter">
+</div>
+<div class="form-group">
+        <label for="">Prénom</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Harry">
+</div>
+<div class="form-group">
+        <label for="">Courriel</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="rincevent@example.com">
+</div>
+<div class="form-group">
+        <label for="">Téléphone</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="0123456789">
+</div>
     
-    <input type="submit">
+<button type="button" class="btn btn-secondary btn-lg btn-block">Envoyer</button>
 </form>
 {% endblock content %}
