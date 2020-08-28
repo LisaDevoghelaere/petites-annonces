@@ -1,4 +1,21 @@
+/*----------------------------Variables--------------------------*/
+/*fonts*/
+h1 {
+  font-family: "Comfortaa", cursive;
+  font-weight: 500;
+}
+
 a {
   color: black;
+}
+
+a:hover {
+  color: black;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+.add {
+  font-size: 2rem;
 }
 /*# sourceMappingURL=style.css.map */

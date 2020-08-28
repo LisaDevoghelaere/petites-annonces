@@ -1,0 +1,27 @@
+@import'variable.scss';
+h1{
+    font-family: $popy-font;
+    font-weight: 500;
+}
+a{
+    color : black;
+    &:hover{
+        color : black;
+        text-decoration-line: none;
+    }
+}
+.add{
+    font-size : 2rem;
+}
+// body{
+
+//     background-color: lightgreen;
+//     .container-fluid{
+//     background-image : url(../../public/media/logo/motif-popy.png);
+//     .container{
+//     background-color: lightgreen;
+
+//     }
+
+//     }
+// }
