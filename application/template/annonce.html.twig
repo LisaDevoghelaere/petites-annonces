@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Voici l'annonce selectionnée</h1>
-</body>
-</html>
+{% extends "base.html.twig" %}
+
+{% block content %}
+<h2>{{ann_titre}}</h2>
+<p><img src="{{ann_image_url}}" alt=""></p>
+<p>{{categorie}}</p>
+<p>{{ann_description}}</p>
+<p>{{ann_prix}}</p>
+<p>{{ann_date_ecriture}}</p>
+<h3>Contacter l'annonceur</h3>
+<p>{{usr_nom}}</p>
+<p>{{usr_prenom}}</p>
+<p>{{usr_courriel}}</p>
+<p>{{usr_telephone}}</p>
+
+
+{% endblock content %}

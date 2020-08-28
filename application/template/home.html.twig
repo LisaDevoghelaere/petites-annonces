@@ -1,6 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
+{% for element in liste %}
 <div class="card mb-3" style="max-width: 540px;">
     <div class="row no-gutters">
       <div class="col-md-4">
@@ -8,15 +9,13 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          {% for annonce in liste %}
-          <h5 class="card-title">{{ annonce.ann_titre }}</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <h3 class="card-title">{{ann_titre}}</h3>
+          <p class="card-text">{{ann_description}}</p>
           
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          {% endfor %}
+          <p class="card-text">{{ann_prix}}</p>
         </div>
       </div>
     </div>
   </div>
-
+{% endfor %}
 {% endblock content %}
