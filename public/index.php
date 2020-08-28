@@ -17,7 +17,11 @@ $router->setBasePath('');
     
     $router->map('GET', '/', function () {
         \App\Home::homePage();
+        
     });
+
+    
+   
 
 
     
