@@ -6,6 +6,7 @@ class Home{
     public static function homePage(){
 
         $liste = self::liste_annonces();
+        // self pour accéder aux propriétés ou méthodes de la classe
         // echo"<pre>";
         // print_r ($liste);
         // echo"</pre>";

@@ -16,16 +16,16 @@ $router->setBasePath('');
     });
 
     // Page d'une annonce annonce.html.twig
-    $router->map('GET', '/', function () {
-        \App\Annonce::pageAnnonce();
+    $router->map('GET', '/annonce[:ann_unique_id]', function ($ann_unique_id){
+        
+            \App\Annonce::pageAnnonce();
+        
+        // echo 'salut';
+        
     });
     
-
-
-
 // Lancer les map du routeur
 $match = $router->match();
 if ($match !== null) {
 call_user_func_array($match['target'], $match['params']);
-// $match['target']($match['params']['slug'], $match['params']['id']);
 }

@@ -6,7 +6,7 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
 {% for annonce in liste %}
-<a href="Annonce.php?Annonce.php=1&id={{ annonce.id }}">
+<a href="annonce{{ annonce.ann_unique_id }}">
 <div class="card mb-3" style="max-width: 540px;">
     <div class="row no-gutters">
       <div class="col-md-4">

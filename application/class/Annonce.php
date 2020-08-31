@@ -7,10 +7,8 @@ class Annonce{
     public static function pageAnnonce(){
 
         $annonce = self::voir_annonce();
-        // echo"<pre>";
-        // print_r ($annonce);
-        // echo"</pre>";
-        // die();
+        $ann_unique_id = ':ann_unique_id';
+        
         $loader = new \Twig\Loader\FilesystemLoader('../application/template');
         $twig = new \Twig\Environment($loader, [
             'cache'=> '../application/cache',
@@ -22,19 +20,22 @@ class Annonce{
         // render template
         $template = $twig->load('annonce.html.twig');
         echo $template->render(array(
-            'annonce' => $annonce
+            'annonce' => $annonce,
+            'ann_unique_id' => $ann_unique_id
         ));
     
     }
 
-    private static function voir_annonce($ann_unique_id){
+    private static function voir_annonce(){
         //Connexion
         $base = new \App\Db();
-        $ann_unique_id = ":unique_id";
+        
         if(isset($_GET['ann_unique_id']) && !empty($_GET['ann_unique_id'])){
         $sql = "SELECT ann_unique_id, ann_titre, ann_description, ann_prix, ann_image_url, ann_date_validation, usr_nom, cat_libelle FROM annonce INNER JOIN categorie ON categorie_id = cat_id INNER JOIN utilisateur ON id = utilisateur_id where ann_unique_id = :ann_unique_id";
         $data = $base->q($sql);  
         return $data;
+        }else{
+            echo "erreur";
         }
     }
 }
