@@ -3,16 +3,17 @@
 {% block content %}
 
 <h2>{{annonce.ann_titre}}</h2>
-<p><img src="{{ann_image_url}}" alt=""></p>
-<p>{{categorie}}</p>
-<p>{{ann_description}}</p>
-<p>{{ann_prix}}</p>
-<p>{{ann_date_ecriture}}</p>
+<p><img src="{{annonce.ann_image_url}}" alt=""></p>
+<p>{{annonce.categorie}}</p>
+<p>{{annonce.ann_description}}</p>
+<p>{{annonce.ann_prix}}</p>
+<p>{{annonce.ann_date_ecriture}}</p>
 <h3>Contacter l'annonceur</h3>
-<p>{{usr_nom}}</p>
-<p>{{usr_prenom}}</p>
-<p>{{usr_courriel}}</p>
-<p>{{usr_telephone}}</p>
+<p>{{annonce.usr_nom}}</p>
+<p>{{annonce.usr_prenom}}</p>
+<p>{{annonce.usr_courriel}}</p>
+<p>{{annonce.usr_telephone}}</p>
+
 
 
 {% endblock content %}
