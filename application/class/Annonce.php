@@ -89,10 +89,10 @@ class Annonce
         $base = new \App\Db();
 
         //Test if unique_id exist
-        $req = $base->q("SELECT `is_validated` FROM `annonce` WHERE `ann_unique_id` = :ann_unique_id",
+        $req = $base->q("SELECT `ann__est_valide` FROM `annonce` WHERE `ann_unique_id` = :ann_unique_id",
             array(array('ann_unique_id',$ann_unique_id,\PDO::PARAM_STR)));
 
-        $valid = $req[0]->is_validated;
+        $valid = $req[0]->ann__est_valide;
 
         if($valid === 1){
             return true;
