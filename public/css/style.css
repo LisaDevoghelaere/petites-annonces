@@ -1,11 +1,5 @@
 /*----------------------------Variables--------------------------*/
 /*fonts*/
-/*$popy-font : 'Corben', cursive;*/
-h1 {
-  font-family: "Comfortaa", cursive;
-  font-weight: 500;
-}
-
 a {
   color: black;
 }
@@ -18,5 +12,36 @@ a:hover {
 
 .add {
   font-size: 2rem;
+}
+
+h1 {
+  font-family: "Comfortaa", cursive;
+  font-weight: 500;
+  text-align: left;
+}
+
+.search {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.image-annonce {
+  height: 100%;
+  background-image: url(../media/logo/motif-free.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f5efaa;
+}
+
+.annonce {
+  display: block;
+}
+
+.groupe-annonce {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 /*# sourceMappingURL=style.css.map */
