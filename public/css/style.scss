@@ -24,11 +24,15 @@ h1{
     margin-bottom: 2rem;
 }
 .image-annonce{
-    height : 100%;
+    max-height : 100%;
+    width : auto;
+    max-width: 100%;
+    box-sizing: border-box;
     background-image: url(../media/logo/motif-free.png);
     background-position: center;
     background-repeat: no-repeat;
     background-color: rgb(245, 239, 170);
+    display : block;
 }
 .annonce{
     display : block;
@@ -39,4 +43,22 @@ h1{
     align-content: center;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+.mini-carte{
+    width: 540px;
+    height : 140px;
+}
+.div-image, .row-carte{
+    box-sizing: border-box;
+    height : 100%;
+    
+}
+.div-image{
+    background-image: url(../media/logo/motif-free.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(245, 239, 170);
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }

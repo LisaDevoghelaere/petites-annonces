@@ -26,11 +26,16 @@ h1 {
 }
 
 .image-annonce {
-  height: 100%;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-image: url(../media/logo/motif-free.png);
   background-position: center;
   background-repeat: no-repeat;
   background-color: #f5efaa;
+  display: block;
 }
 
 .annonce {
@@ -38,10 +43,44 @@ h1 {
 }
 
 .groupe-annonce {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.mini-carte {
+  width: 540px;
+  height: 140px;
+}
+
+.div-image, .row-carte {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+}
+
+.div-image {
+  background-image: url(../media/logo/motif-free.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f5efaa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 /*# sourceMappingURL=style.css.map */
