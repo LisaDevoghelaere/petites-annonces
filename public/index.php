@@ -33,8 +33,12 @@ $router->setBasePath('');
             'ann_unique_id' => $ann_unique_id,
         ]);
        
-        
     });
+
+    // // Page Ajout d'une annonce ajout.html.twig
+    // $router->map('POST', '/ajax-post-add', function(){
+    //     \App\Ajout::Add();
+    // });
     
 // Lancer les map du routeur
 $match = $router->match();
