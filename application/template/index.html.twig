@@ -28,21 +28,18 @@
 <div class="groupe-annonce">
   {% for annonce in liste %}
   <a href="annonce{{ annonce.ann_unique_id }}" class="annonce">
-  <div class="card mb-3" style="max-width: 540px;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
+  <div class="card mb-3 mini-carte">
+      <div class="row no-gutters row-carte">
+        <div class="col-md-4 div-image">
           <img src="{{annonce.ann_image_url}}" class="card-img image-annonce" alt="">
         </div>
         <div class="col-md-6">
           <div class="card-body">
-            
             <h5 class="card-title">{{ annonce.ann_titre }}</h5>
             <p class="card-text text-truncate">{{annonce.ann_description}}</p>
             <p class="card-text">{{annonce.ann_prix}}</p>
-            
           </div>
         </div>
-        
       </div>
     </div>
     </a>
