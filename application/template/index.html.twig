@@ -1,31 +1,52 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-{% for annonce in liste %}
-<a href="annonce{{ annonce.ann_unique_id }}">
-<div class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-      <p>{{annonce.ann_unique_id}}</p>
-      <div class="col-md-4">
-        <img src="{{annonce.ann_image_url}}" class="card-img" alt="">
+<div class="search">
+    <div class="input-group mb-3">
+      <select class="custom-select" id="inputGroupSelect02">
+        <option selected>Catégories</option>
+        <option value="1">Vêtements</option>
+        <option value="2">Meubles</option>
+        <option value="3">Véhicules</option>
+        <option value="3">Jeux/jouets</option>
+        <option value="3">Appareils électroniques/multimédia</option>
+        <option value="3">Divertissements/loisirs</option>
+        <option value="3">Services</option>
+        <option value="3">Autre</option>
+      </select>
+      <div class="input-group-append">
+        <label class="input-group-text" for="inputGroupSelect02">Choisir</label>
       </div>
-      
-      <div class="col-md-8">
-        <div class="card-body">
-          
-          <h5 class="card-title">{{ annonce.ann_titre }}</h5>
-          <p class="card-text text-truncate">{{annonce.ann_description}}</p>
-          <p class="card-text">{{annonce.ann_prix}}</p>
-          
-        </div>
-      </div>
-      
+    </div>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="..." aria-label="Recipient's username" aria-describedby="button-addon2">
+      <div class="input-group-append">
+        <label class="input-group-text" for="inputGroupSelect02">Trouver</label>
     </div>
   </div>
-  </a>
-{% endfor %}
+</div>
+<div class="groupe-annonce">
+  {% for annonce in liste %}
+  <a href="annonce{{ annonce.ann_unique_id }}" class="annonce">
+  <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{annonce.ann_image_url}}" class="card-img image-annonce" alt="">
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            
+            <h5 class="card-title">{{ annonce.ann_titre }}</h5>
+            <p class="card-text text-truncate">{{annonce.ann_description}}</p>
+            <p class="card-text">{{annonce.ann_prix}}</p>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    </a>
+  {% endfor %}
+</div>
 {% endblock content %}
+
