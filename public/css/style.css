@@ -1,5 +1,9 @@
 /*----------------------------Variables--------------------------*/
 /*fonts*/
+body {
+  background-color: #f9f4f5;
+}
+
 a {
   color: black;
 }
@@ -14,15 +18,34 @@ a:hover {
   font-size: 2rem;
 }
 
+.add i {
+  color: #eec643;
+}
+
 h1 {
   font-family: "Comfortaa", cursive;
   font-weight: 500;
   text-align: left;
 }
 
+h1 a {
+  color: #eec643;
+}
+
+header {
+  border-bottom: solid 2px;
+  border-bottom-color: #0b7a75;
+}
+
 .search {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  background-color: #ef8275;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  border-radius: 10px;
 }
 
 .image-annonce {
@@ -34,7 +57,6 @@ h1 {
   background-image: url(../media/logo/motif-free.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #f5efaa;
   display: block;
 }
 
@@ -56,11 +78,17 @@ h1 {
       justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-radius: 10px;
 }
 
 .mini-carte {
   width: 540px;
   height: 140px;
+  background-color: #f9f4f5;
 }
 
 .div-image, .row-carte {
@@ -70,10 +98,9 @@ h1 {
 }
 
 .div-image {
-  background-image: url(../media/logo/motif-free.png);
+  background-image: url(../media/logo/popy3-1.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #f5efaa;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,5 +109,10 @@ h1 {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+}
+
+.row-carte {
+  border: solid 1px #ef8275;
+  border-radius: 3px;
 }
 /*# sourceMappingURL=style.css.map */
