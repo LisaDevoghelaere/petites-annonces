@@ -4,12 +4,16 @@ body {
   background-color: #f9f4f5;
 }
 
+body p {
+  color: #130d07;
+}
+
 a {
-  color: black;
+  color: #130d07;
 }
 
 a:hover {
-  color: black;
+  color: #0b7a75;
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
 }
@@ -32,9 +36,33 @@ h1 a {
   color: #eec643;
 }
 
+h1 a:hover {
+  color: #0b7a75;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
 header {
   border-bottom: solid 2px;
   border-bottom-color: #0b7a75;
+}
+
+footer {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  background-color: #eec643;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .search {
@@ -54,7 +82,7 @@ header {
   max-width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-image: url(../media/logo/motif-free.png);
+  background-color: #f9f4f5;
   background-position: center;
   background-repeat: no-repeat;
   display: block;
@@ -98,7 +126,7 @@ header {
 }
 
 .div-image {
-  background-image: url(../media/logo/popy3-1.png);
+  background-image: url(../media/logo/back-popy.png);
   background-position: center;
   background-repeat: no-repeat;
   display: -webkit-box;
@@ -114,5 +142,49 @@ header {
 .row-carte {
   border: solid 1px #ef8275;
   border-radius: 3px;
+}
+
+.mini-carte-prix {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+/*-------------------------------------Annonce----------------------------*/
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.photo-annonce {
+  max-width: 300px;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.detail-annonce {
+  margin: 2rem;
+  padding: 1.5rem;
+  border: solid 1px #ef8275;
+  border-radius: 10px;
+  max-width: 500px;
+}
+
+.flex-detail-annonce {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.div-pdf {
+  margin: 2rem;
+  padding: 1.5rem;
 }
 /*# sourceMappingURL=style.css.map */

@@ -3,10 +3,12 @@
 // --------------------------Général---------------------
 body{
     background-color: $blanc;
-    //background-color:rgb(19, 13, 7);
+    p{
+        color : $marron;
+    }
 }
 a{
-    color : black;
+    color : $marron;
     &:hover{
         color : $turquoise;
         text-decoration-line: none;
@@ -37,6 +39,19 @@ header{
     border-bottom : solid 2px;
     border-bottom-color: $turquoise;
 }
+footer{
+    margin-top : 3rem;
+    margin-bottom : 3rem;
+    background-color: $jaunecrayola;
+    padding-left : 0.5rem;
+    padding-right : 0.5rem;
+    padding-top : 1.5rem;
+    padding-bottom : 1rem;
+    border-radius: 10px;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
 //--------------------------------index------------------------------
 .search{
     margin-top: 2rem;
@@ -54,10 +69,9 @@ header{
     width : auto;
     max-width: 100%;
     box-sizing: border-box;
-    background-image: url(../media/logo/motif-free.png);
+    background-color: $blanc;
     background-position: center;
     background-repeat: no-repeat;
-    //background-color: $jaunecrayola;
     display : block;
 }
 .annonce{
@@ -70,7 +84,6 @@ header{
     align-content: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    //background-color: $saumon;
     padding-left : 0.5rem;
     padding-right : 0.5rem;
     padding-top : 1.5rem;
@@ -89,10 +102,9 @@ header{
     
 }
 .div-image{
-    background-image: url(../media/logo/popy3-1.png);
+    background-image: url(../media/logo/back-popy.png);
     background-position: center;
     background-repeat: no-repeat;
-    //background-color: $saumon;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -101,11 +113,16 @@ header{
     border : solid 1px $saumon;
     border-radius: 3px;
 }
+.mini-carte-prix{
+    font-size : 1.5rem;
+    font-weight : 700;
+    text-align: right;
+}
 /*-------------------------------------Annonce----------------------------*/
 h2{
-    font-size : 2.5rem;
+    font-size : 2rem;
     font-weight : 700;
-
+    margin-bottom : 1rem;
 }
 .photo-annonce{
     max-width: 300px;
@@ -116,5 +133,15 @@ h2{
     margin : 2rem;
     padding : 1.5rem;
     border : solid 1px $saumon;
-    border-radius: 3px;
+    border-radius: 10px;
+    max-width: 500px;
+}
+.flex-detail-annonce{
+    display : flex;
+    align-content: center;
+    justify-content: space-between;
+}
+.div-pdf{
+    margin : 2rem;
+    padding : 1.5rem;
 }
