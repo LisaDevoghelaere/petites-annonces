@@ -8,7 +8,7 @@ body{
 a{
     color : black;
     &:hover{
-        color : black;
+        color : $turquoise;
         text-decoration-line: none;
     }
 }
@@ -27,6 +27,10 @@ h1{
     text-align: left;
     a{
         color : $jaunecrayola;
+        &:hover{
+            color : $turquoise;
+            text-decoration-line: none;
+        }
     }   
 }
 header{
@@ -94,6 +98,23 @@ header{
     align-content: center;
 }
 .row-carte{
+    border : solid 1px $saumon;
+    border-radius: 3px;
+}
+/*-------------------------------------Annonce----------------------------*/
+h2{
+    font-size : 2.5rem;
+    font-weight : 700;
+
+}
+.photo-annonce{
+    max-width: 300px;
+    height: auto;
+    box-sizing: border-box;
+}
+.detail-annonce{
+    margin : 2rem;
+    padding : 1.5rem;
     border : solid 1px $saumon;
     border-radius: 3px;
 }
