@@ -26,9 +26,9 @@
   </div>
 </div>
 <div class="groupe-annonce">
-  {% for annonce in liste %}
+  {% for annonce in liste|slice(0, 10) %}
   <a href="annonce{{ annonce.ann_unique_id }}" class="annonce">
-  <div class="card mb-3 mini-carte">
+    <div class="card mb-3 mini-carte">
       <div class="row no-gutters row-carte">
         <div class="col-md-4 div-image">
           <img src="{{annonce.ann_image_url}}" class="card-img image-annonce" alt="">
@@ -37,7 +37,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ annonce.ann_titre }}</h5>
             <p class="card-text text-truncate">{{annonce.ann_description}}</p>
-            <p class="card-text">{{annonce.ann_prix}}</p>
+            <p class="card-text">{{annonce.ann_prix}} €</p>
           </div>
         </div>
       </div>
@@ -46,4 +46,5 @@
   {% endfor %}
 </div>
 {% endblock content %}
+{% block script %}<script src="../../public/js/script.js"></script>{% endblock script %}
 
