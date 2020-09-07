@@ -19,7 +19,7 @@ a{
     font-size : 2rem;
     i{
         //color : rgb(223, 172, 78);
-        color : $jaunecrayola;
+        color : $marron;
 
     }
 }
@@ -28,7 +28,7 @@ h1{
     font-weight: 500;
     text-align: left;
     a{
-        color : $jaunecrayola;
+        color : $marron;
         &:hover{
             color : $turquoise;
             text-decoration-line: none;
