@@ -50,12 +50,13 @@ header {
 footer {
   margin-top: 3rem;
   margin-bottom: 3rem;
-  background-color: #eec643;
+  background-color: #ef8275;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
   border-radius: 10px;
+  color: #f9f4f5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
