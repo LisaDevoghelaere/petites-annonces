@@ -59,7 +59,7 @@ $router->map('POST', '/ajax-ajout', function (){
     
   //catégories
 $router->map('POST', '/choixcategorie', function () {
-    \App\Home::homePage($_POST);
+    \App\AjaxCarte::homePage($_POST);
 });  
 // Lancer les map du routeur
 $match = $router->match();
