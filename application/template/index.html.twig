@@ -5,16 +5,16 @@
     <div class="input-group mb-3">
       <select class="custom-select" id="inputGroupSelect02">
         <option selected>Catégories</option>
-        <option value="1">Vêtements</option>
-        <option value="2">Meubles</option>
-        <option value="3">Véhicules</option>
-        <option value="3">Jeux/jouets</option>
-        <option value="3">Appareils électroniques/multimédia</option>
-        <option value="3">Divertissements/loisirs</option>
-        <option value="3">Services</option>
-        <option value="3">Autre</option>
+        <option value="3">Vêtements</option>
+        <option value="5">Meubles</option>
+        <option value="6">Véhicules</option>
+        <option value="7">Jeux/jouets</option>
+        <option value="8">Appareils électroniques/multimédia</option>
+        <option value="9">Divertissements/loisirs</option>
+        <option value="10">Services</option>
+        <option value="11">Autre</option>
       </select>
-      <div class="input-group-append">
+      <div id="choisir"  class="input-group-append">
         <label class="input-group-text" for="inputGroupSelect02">Choisir</label>
       </div>
     </div>
@@ -28,16 +28,20 @@
 <div class="groupe-annonce">
   {% for annonce in liste %}
   <a href="annonce{{ annonce.ann_unique_id }}" class="annonce">
-  <div class="card mb-3 mini-carte">
+    <div class="card mb-3 mini-carte">
       <div class="row no-gutters row-carte">
         <div class="col-md-4 div-image">
+        {%if annonce.ann_image_url != ""%}
           <img src="{{annonce.ann_image_url}}" class="card-img image-annonce" alt="">
+        {% else %}
+          <img src="media/logo/back-popy.png" class="card-img image-annonce" alt="">
+        {% endif %}
         </div>
         <div class="col-md-6">
           <div class="card-body">
             <h5 class="card-title">{{ annonce.ann_titre }}</h5>
             <p class="card-text text-truncate">{{annonce.ann_description}}</p>
-            <p class="card-text">{{annonce.ann_prix}}</p>
+            <p class="card-text mini-carte-prix">{{annonce.ann_prix}} €</p>
           </div>
         </div>
       </div>
@@ -46,4 +50,5 @@
   {% endfor %}
 </div>
 {% endblock content %}
+
 

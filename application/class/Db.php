@@ -43,6 +43,8 @@ class Db {
 		}
 		$stmt->execute();
 		return $stmt->fetchAll();
+		$stmt->closeCursor();
+
 	}
 
 	public function qw($sql,Array $cond = null){

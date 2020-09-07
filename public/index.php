@@ -57,10 +57,13 @@ $router->map('POST', '/ajax-ajout', function (){
     
    
     
+  //catégories
+$router->map('POST', '/choixcategorie', function () {
+    \App\Home::homePage($_POST);
+});  
 // Lancer les map du routeur
 $match = $router->match();
 if ($match !== null) {
 call_user_func_array($match['target'], $match['params']);
 }
-
 

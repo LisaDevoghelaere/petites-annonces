@@ -13,6 +13,7 @@ class Twig{
         $loader = new \Twig\Loader\FilesystemLoader('../application/template');
         $twig = new \Twig\Environment($loader, [
             'cache' => false,
+            //'../application/cache'
             'debug' => true,
         ]);
         $twig->addExtension(new \Twig\Extension\DebugExtension());
