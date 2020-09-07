@@ -20,25 +20,42 @@ $router->setBasePath('');
     // Page d'une annonce annonce.html.twig
     $router->map('GET', '/annonce[:ann_unique_id]', function ($ann_unique_id){
             //test if unique_id exists
-    if((!\App\Annonce::Exists($ann_unique_id))||(\App\Annonce::IsValidated($ann_unique_id))){
-        header('Location: /');
-    }
+        if((!\App\Annonce::Exists($ann_unique_id))||(\App\Annonce::IsValidated($ann_unique_id))){
+            header('Location: /');
+        }
     
-    $annonce = new Annonce($ann_unique_id);
+        $annonce = new Annonce($ann_unique_id);
 
         //render template
-    $twig = new Twig('annonce.html.twig');
-    $twig->render([
-            'annonce' => $annonce->data[0],
-            'ann_unique_id' => $ann_unique_id,
+        $twig = new Twig('annonce.html.twig');
+        $twig->render([
+                'annonce' => $annonce->data[0],
+                'ann_unique_id' => $ann_unique_id,
         ]);
-       
+        
     });
 
-    // // Page Ajout d'une annonce ajout.html.twig
-    // $router->map('POST', '/ajax-post-add', function(){
-    //     \App\Ajout::Add();
-    // });
+
+    // Page ajout
+    $router->map('GET', '/ajout', function (){
+        if(isset($_POST['ann_titre'])){
+            \App\Ajout::add();
+        }
+    //render template
+    $twig = new Twig('ajout.html.twig');
+    $twig->render(
+            
+    );
+
+    
+});
+
+
+$router->map('POST', '/ajax-ajout', function (){
+    \App\Ajout::add();
+});
+    
+   
     
 // Lancer les map du routeur
 $match = $router->match();

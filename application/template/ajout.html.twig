@@ -1,46 +1,54 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-<form action="">
+<form id="add" method="POST">
 <div class="form-group">
-        <label for="exampleFormControlInput1">Titre</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Robe de mage lvl 80">
+        <label for="exampleFormControlInput1">{{ ann_titre }}</label>
+        <input name="ann_titre" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Robe de mage lvl 80">
 </div>
 <div class="form-group">
-        <label for="">Catégorie</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+        <label for="">{{ categorie }}</label>
+        <select name="cat_libelle" class="form-control" id="exampleFormControlSelect1">
+            <option>meuble</option>
+            
         </select>
 </div>
 <div class="form-group">
-        <label for="exampleFormControlTextarea1">Description</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="exampleFormControlTextarea1">{{ ann_description }}</label>
+        <textarea name="ann_description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 </div>
     <div class="form-group">
-        <label for="">Prix</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="50 Gallions">
+        <label for="">{{ ann_prix }}</label>
+        <input name="ann_prix" type="text" class="form-control" id="exampleFormControlInput1" placeholder="50 Gallions">
     </div>
 <div class="form-group">
-        <label for="">Votre Nom</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Potter">
+        <label for="">{{ usr_nom }}</label>
+        <input name="usr_nom" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Potter">
 </div>
 <div class="form-group">
-        <label for="">Prénom</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Harry">
+        <label for="">{{ usr_prenom }}</label>
+        <input name="usr_prenom" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Harry">
 </div>
 <div class="form-group">
-        <label for="">Courriel</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="rincevent@example.com">
+        <label for="">{{ usr_courriel }}</label>
+        <input name="usr_courriel" type="email" class="form-control" id="exampleFormControlInput1" placeholder="rincevent@example.com">
 </div>
 <div class="form-group">
-        <label for="">Téléphone</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="0123456789">
+        <label for="">{{ usr_telephone }}</label>
+        <input name="usr_telephone" type="text" class="form-control" id="exampleFormControlInput1" placeholder="0123456789">
 </div>
-    
-<button type="button" class="btn btn-secondary btn-lg btn-block">Envoyer</button>
+<div class="form-group">
+        <label for="">{{ ann_image_url }}</label>
+        <input name="ann_image_url" type="file" class="form-control" id="exampleFormControlInput1" placeholder="0123456789">
+</div>
+   
+<button id="envoyer" class="btn btn-secondary btn-lg btn-block">Envoyer</button>
 </form>
-{% endblock content %}
+
+{% endblock %}
+
+{% block javascripts %}
+        <script src="js/soumission.js"></script>
+
+
+{% endblock javascripts %}
