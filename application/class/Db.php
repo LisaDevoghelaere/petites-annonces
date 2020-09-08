@@ -42,8 +42,11 @@ class Db {
 			}
 		}
 		$stmt->execute();
-		return $stmt->fetchAll();
+		
+		$data = $stmt->fetchAll();
 		$stmt->closeCursor();
+		return $data;
+		$stmt=NULL;
 
 	}
 

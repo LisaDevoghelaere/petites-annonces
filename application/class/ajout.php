@@ -74,7 +74,11 @@ class Ajout{
             // $ann_unique_id = $req[0]->ann_unique_id;
             // $ann_unique_id += 1;
 
-            $crypto = "gogogogo";
+
+            //set unique id
+            $crypto = \App\Crypt::hashCode($usr_courriel, strval($utilisateur_id));
+
+            
           
             
 
@@ -100,7 +104,7 @@ class Ajout{
                 array('ann_image_url',$ann_image_url,\PDO::PARAM_STR)
                 )
             );
-            // $sendMail = new Mail('valid', $usr_courriel, $usr_nom, $usr_prenom, $crypto);
+            $sendMail = new Mail('valid', $usr_courriel, $usr_nom, $usr_prenom, $crypto);
             echo json_encode("ok");
         }
     
