@@ -1,3 +1,33 @@
+    {% extends "base.html.twig" %}
+      {% block head %}
+      <style>
+        h2{
+            font-size : 2rem;
+            font-weight : 700;
+            margin-bottom : 1rem;
+        }
+        .photo-annonce{
+            max-width: 300px;
+            height: auto;
+            box-sizing: border-box;
+        }
+        .detail-annonce{
+            margin : 2rem;
+            padding : 1.5rem;
+        }
+        .flex-detail-annonce{
+            display : flex;
+            align-content: center;
+            justify-content: space-between;
+        }
+        .div-pdf{
+            margin : 2rem;
+            padding : 1.5rem;
+        }
+      </style>
+      {% endblock head %}
+
+      {% block content %}
 <div class="detail-annonce">
     <h2>{{annonce.ann_titre}}</h2>
     <p><img src="{{annonce.ann_image_url}}" class="photo-annonce" alt="photo de l'annonce"></p>
@@ -10,3 +40,4 @@
         {{annonce.usr_courriel}} <br>
         {{annonce.usr_telephone}}</p>
 </div>
+{% endblock content %}
