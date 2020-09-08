@@ -178,6 +178,14 @@ h2{
     margin : 2rem;
     padding : 1.5rem;
 }
+/*---------------------------Formulaire ajout----------------------*/
+.form-control:focus{
+    border-color : $turquoise;
+    box-shadow:0 0 0 .2rem $turquoise;
+}
+.btn-secondary.focus, .btn-secondary:focus{
+    box-shadow: none;
+}
 @media#{$smartphone}{
     //-------------------------------------Phone base--------------------------
     //class pour font-awesome
@@ -191,7 +199,9 @@ h2{
 }
 h1{
     font-size : 2.5rem;
-    text-align: right;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
     a{
         
         &:hover{

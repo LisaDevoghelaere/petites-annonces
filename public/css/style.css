@@ -229,6 +229,18 @@ h2 {
   padding: 1.5rem;
 }
 
+/*---------------------------Formulaire ajout----------------------*/
+.form-control:focus {
+  border-color: #0b7a75;
+  -webkit-box-shadow: 0 0 0 0.2rem #0b7a75;
+          box-shadow: 0 0 0 0.2rem #0b7a75;
+}
+
+.btn-secondary.focus, .btn-secondary:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 @media screen and (max-width: 479px) {
   .add {
     font-size: 2rem;
@@ -238,7 +250,14 @@ h2 {
   }
   h1 {
     font-size: 2.5rem;
-    text-align: right;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   h1 a:hover {
     color: #0b7a75;
