@@ -51,7 +51,7 @@ $router->setBasePath('');
     
   //catégories
 $router->map('POST', '/choixcategorie', function () {
-    \App\Home::homePage($_POST);
+    \App\AjaxCarte::homePage($_POST);
 });  
 // Lancer les map du routeur
 $match = $router->match();

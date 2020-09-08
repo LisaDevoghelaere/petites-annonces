@@ -19,30 +19,35 @@ a{
     font-size : 2rem;
     i{
         //color : rgb(223, 172, 78);
-        color : $jaunecrayola;
+        color : $marron;
 
     }
 }
 h1{
     font-family: $popy-font;
+    font-size : 3rem;
     font-weight: 500;
     text-align: left;
     a{
-        color : $jaunecrayola;
+        color : $marron;
         &:hover{
             color : $turquoise;
             text-decoration-line: none;
         }
+        img{
+            margin-bottom: 0.8rem;
+        }
     }   
 }
 header{
-    border-bottom : solid 2px;
+    padding-top: 1.5rem;
+    border-bottom : solid 4px;
     border-bottom-color: $turquoise;
 }
 footer{
     margin-top : 3rem;
     margin-bottom : 3rem;
-    background-color: $jaunecrayola;
+    background-color: $saumon;
     padding-left : 0.5rem;
     padding-right : 0.5rem;
     padding-top : 1.5rem;
@@ -51,32 +56,29 @@ footer{
     display: flex;
     align-content: center;
     justify-content: space-around;
+    p{
+        color : $blanc;
+        a{
+        color : $blanc;
+        }
+    }
+    
 }
 //--------------------------------index------------------------------
 .search{
     margin-top: 2rem;
     margin-bottom: 2rem;
     background-color: $saumon;
-    padding-left : 0.5rem;
-    padding-right : 0.5rem;
+    padding-left : 0.8rem;
+    padding-right : 0.8rem;
     padding-top : 1.5rem;
     padding-bottom : 1rem;
     border-radius: 10px;
 
 }
-.image-annonce{
-    max-height : 100%;
-    width : auto;
-    max-width: 100%;
-    box-sizing: border-box;
-    background-color: $blanc;
-    background-position: center;
-    background-repeat: no-repeat;
-    display : block;
-}
-.annonce{
-    display : block;
-    
+.custom-select:focus{
+    border-color: $saumon;
+    box-shadow: none;
 }
 .groupe-annonce{
     display: flex;
@@ -84,39 +86,69 @@ footer{
     align-content: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding-left : 0.5rem;
-    padding-right : 0.5rem;
+    // padding-left : 0.5rem;
+    // padding-right : 0.5rem;
     padding-top : 1.5rem;
     padding-bottom : 1.5rem;
-    border-radius: 10px;
+    // border-radius: 10px;
+    
+}
+.annonce{
+    display : block;
     
 }
 .mini-carte{
-    width: 540px;
-    height : 140px;
+    width: 33rem;
+    height : 8.75rem;
     background-color: $blanc;
-}
-.div-image, .row-carte{
-    box-sizing: border-box;
-    height : 100%;
-    
+    display : flex;
+    align-content: center;
+    justify-content: left;
+    border : 1px solid salmon;
+    border-radius: 3px;
+    margin : 0.8rem;
 }
 .div-image{
-    //background-image: url(../media/logo/back-popy.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
+    box-sizing: border-box;
+    height : 100%;
+    width : 40%;
+    display : flex;
     align-content: center;
+    justify-content: center;
 }
-.row-carte{
-    border : solid 1px $saumon;
-    border-radius: 3px;
+.image-annonce{
+    //max-width: 100%;
+    height : 100%;
+    width : auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    display : block;
+}
+.contenant-txt{
+    background-color: $blanc;
+    padding-left: 0.8rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+    max-width: 55%;
+}
+.carte-titre{
+    font-size: 1.5rem;
+    margin-top : 0.5rem;
+    margin-bottom: 0.8rem;
+    box-sizing: border-box;
+
+}
+p{
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    box-sizing: border-box;
 }
 .mini-carte-prix{
     font-size : 1.5rem;
     font-weight : 700;
     text-align: right;
+    margin-bottom: 0.5rem;
+
 }
 /*-------------------------------------Annonce----------------------------*/
 h2{
@@ -144,4 +176,46 @@ h2{
 .div-pdf{
     margin : 2rem;
     padding : 1.5rem;
+}
+@media#{$smartphone}{
+    .mini-carte{
+        width: 21.85rem;
+        height : 8.75rem;
+        background-color: $blanc;
+        display : flex;
+        align-content: center;
+        justify-content: left;
+        border : 1px solid salmon;
+        border-radius: 3px;
+        margin : 0.8rem;
+    }
+    .carte-titre{
+        font-size: 1.5rem;
+        margin-top : 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    p{
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        margin-top : 0.5rem;
+    }
+    .mini-carte-prix{
+        text-align: right;
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin-bottom: 0.2rem;
+        margin-top : 0.5rem;
+    }
+    .div-image{
+        width : 45%;
+    }
+    .image-annonce{
+        //max-width: 100%;
+        max-height : 100%;
+        width : auto;
+        height : auto;
+        max-width: 100%;
+        box-sizing: border-box;
+        display : block;
+    }
 }

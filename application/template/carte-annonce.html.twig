@@ -1,0 +1,22 @@
+{% for annonce in liste %}
+  <a href="annonce{{ annonce.ann_unique_id }}" class="annonce">
+    <div class="mini-carte">
+
+        <div class="div-image">
+        {%if annonce.ann_image_url != ""%}
+          <img src="{{annonce.ann_image_url}}" class="image-annonce" alt="">
+        {% else %}
+          <img src="media/logo/back-popy.png" class="image-annonce" alt="">
+        {% endif %}
+        </div>
+        <div class="contenant-txt">
+          
+            <h5 class="carte-titre text-truncate">{{ annonce.ann_titre }}</h5>
+            <p class="text-truncate">{{annonce.ann_description}}</p>
+            <p class="mini-carte-prix">{{annonce.ann_prix}} €</p>
+          
+        </div>
+      
+    </div>
+    </a>
+  {% endfor %}
