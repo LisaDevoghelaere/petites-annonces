@@ -135,6 +135,7 @@ footer{
     font-size: 1.5rem;
     margin-top : 0.5rem;
     margin-bottom: 0.8rem;
+    padding-bottom: 0.3rem;
     box-sizing: border-box;
 
 }
@@ -177,7 +178,56 @@ h2{
     margin : 2rem;
     padding : 1.5rem;
 }
+/*---------------------------Formulaire ajout----------------------*/
+.form-control:focus{
+    border-color : $turquoise;
+    box-shadow:0 0 0 .2rem $turquoise;
+}
+.btn-secondary.focus, .btn-secondary:focus{
+    box-shadow: none;
+}
 @media#{$smartphone}{
+    //-------------------------------------Phone base--------------------------
+    //class pour font-awesome
+.add{
+    font-size : 2rem;
+    i{
+        //color : rgb(223, 172, 78);
+        color : $marron;
+
+    }
+}
+h1{
+    font-size : 2.5rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    a{
+        
+        &:hover{
+            color : $turquoise;
+            text-decoration-line: none;
+        }
+        img{
+            margin-bottom: 0.8rem;
+            text-align: left;
+        }
+    }   
+}
+header{
+    padding-top: 1.5rem;
+    border-bottom : solid 4px;
+    border-bottom-color: $turquoise;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    
+}
+/*-------------------------------------Phone cartes annonces----------------------------*/
+
     .mini-carte{
         width: 21.85rem;
         height : 8.75rem;
@@ -218,4 +268,23 @@ h2{
         box-sizing: border-box;
         display : block;
     }
+/*-------------------------------------Phone Annonce----------------------------*/
+.flex-detail-annonce{
+    display : flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+.photo-annonce{
+    max-width: 250px;
+    height: auto;
+    box-sizing: border-box;
+}
+.detail-annonce{
+    margin : 1rem;
+    padding : 1rem;
+    border : solid 1px $saumon;
+    border-radius: 10px;
+    max-width: 350px;
+}
 }
