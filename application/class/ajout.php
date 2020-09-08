@@ -1,12 +1,11 @@
 <?php
 
 namespace App;
-
+use App\Mail;
 
 class Ajout{
     public $data=[];
-    public static function Add(){
-        
+    public static function add(){
         
             // les valeurs
             
@@ -18,6 +17,7 @@ class Ajout{
             $usr_prenom  = $_POST['usr_prenom'];
             $usr_courriel  = $_POST['usr_courriel'];
             $usr_telephone  = $_POST['usr_telephone'];
+           
 
             // image 
             if(isset($_POST['ann_image_url'])){
@@ -30,29 +30,44 @@ class Ajout{
             $base = new \App\Db();
 
             // Ajouter un utilisateur
+            $req = $base->q('SELECT id FROM utilisateur WHERE usr_courriel = :usr_courriel',
+            array(
+                array('usr_courriel', $usr_courriel,\PDO::PARAM_STR),
+            ));
             
-            // $req = $base->q('SELECT id FROM utilisateur WHERE usr_courriel = :usr_courriel',
-            // array(
-            //     array('usr_courriel', $usr_courriel,\PDO::PARAM_STR),
-            // ));
-            
+            if(!empty($req)){
+                $utilisateur_id = $req;
+          
+                $utilisateur_id = intval($utilisateur_id[0]->id);
 
-            // // si l'id est différent de nul alors on insere
-            // if($req == NULL ){
                 
-            //     $base->qw('INSERT INTO utilisateur (usr_nom, usr_prenom, usr_telephone, usr_courriel) VALUES ( :usr_nom, :usr_prenom, :usr_telephone, :usr_courriel)',
-            //     array(
-            //         array('usr_nom', $usr_nom,\PDO::PARAM_STR),
-            //         array('usr_prenom', $usr_prenom,\PDO::PARAM_STR),
-            //         array('usr_telephone', $usr_telephone,\PDO::PARAM_STR),
-            //         array('usr_courriel', $usr_courriel,\PDO::PARAM_STR),
-            //     ));
-            // }
+            }
+
+            // si l'id est null alors on insere
+            else{
+                echo 'test else';
+                $base->qw('INSERT INTO utilisateur (usr_nom, usr_prenom, usr_telephone, usr_courriel) VALUES (:usr_nom, :usr_prenom, :usr_telephone, :usr_courriel)',
+                array(
+                    array('usr_nom', $usr_nom,\PDO::PARAM_STR),
+                    array('usr_prenom', $usr_prenom,\PDO::PARAM_STR),
+                    array('usr_telephone', $usr_telephone,\PDO::PARAM_STR),
+                    array('usr_courriel', $usr_courriel,\PDO::PARAM_STR),
+                    
+                ));
+                // $utilisateur_id = $base->q('SELECT id FROM utilisateur ORDER BY id DESC LIMIT 1');
+                $utilisateur_id = $base->q('SELECT max(id) as `id` FROM utilisateur');
+             
+                $utilisateur_id = intval($utilisateur_id[0]->id);
+               
+
+            }
 
             //avoir la id de la categorie
             $req = $base->q("SELECT `cat_id` FROM `categorie` WHERE `cat_libelle` = :cat_libelle",
             array(array('cat_libelle',$cat_libelle,\PDO::PARAM_STR)));
             $categorie_id = $req[0]->cat_id;
+            $categorie_id = intval($categorie_id);
+            
 
             // // définir dernier id
             // $req = $base->q("SELECT MAX(`ann_unique_id`) FROM `annonce`");
@@ -61,21 +76,7 @@ class Ajout{
 
             $crypto = "gogogogo";
           
-            // $ann_date_ecriture = date("Y-m-d");
-
-            // // ADD POST
-            // $base->qw('INSERT INTO annonce(`crypto`, `ann_titre`, `categorie_id`, `ann_description`, `ann_prix`, `ann_date_ecriture`, ann_image_url)
-            //           VALUES (:crypto, :ann_titre, :cat_id, :ann_description, :ann_prix, :ann_date_ecriture, :ann_image_url)',
-            // array(
-            //     array('crypto',$crypto,\PDO::PARAM_STR),
-            //     array('ann_titre',$ann_titre,\PDO::PARAM_STR),
-            //     array('categorie_id',$cat_id,\PDO::PARAM_STR),
-            //     array('ann_description',$ann_description,\PDO::PARAM_STR),
-            //     array('ann_prix',$ann_prix,\PDO::PARAM_STR),
-            //     array('ann_date_ecriture',$ann_date_ecriture,\PDO::PARAM_STR),
-            //     array('ann_image_url',$ann_image_url,\PDO::PARAM_STR)
-            //     )
-            // );
+            
 
 
 
@@ -86,21 +87,24 @@ class Ajout{
             $ann_date_ecriture = date("Y-m-d");
 
             // ADD POST
-            $base->qw("INSERT INTO annonce(`crypto`, `ann_titre`, `categorie_id`, `ann_description`, `ann_date_ecriture`, `ann_prix`, `ann_image_url` )
-                      VALUES (:crypto, :ann_titre, :categorie_id, :ann_description, :ann_date_ecriture, :ann_prix, :ann_image_url )",
+            $base->qw("INSERT INTO annonce(`utilisateur_id`, `crypto`, `ann_titre`, `categorie_id`, `ann_description`, `ann_date_ecriture`, `ann_prix`, `ann_image_url` )
+                      VALUES (:utilisateur_id, :crypto, :ann_titre, :categorie_id, :ann_description, :ann_date_ecriture, :ann_prix, :ann_image_url )",
             array(
+                array('utilisateur_id',$utilisateur_id,\PDO::PARAM_INT),
                 array('crypto',$crypto,\PDO::PARAM_STR),
                 array('ann_titre',$ann_titre,\PDO::PARAM_STR),
                 array('categorie_id',$categorie_id,\PDO::PARAM_INT),
                 array('ann_description',$ann_description,\PDO::PARAM_STR),
-                array('ann_prix',$ann_prix,\PDO::PARAM_STR),
+                array('ann_prix',$ann_prix,\PDO::PARAM_INT),
                 array('ann_date_ecriture',$ann_date_ecriture,\PDO::PARAM_STR),
                 array('ann_image_url',$ann_image_url,\PDO::PARAM_STR)
                 )
             );
+            // $sendMail = new Mail('valid', $usr_courriel, $usr_nom, $usr_prenom, $crypto);
+            echo json_encode("ok");
         }
     
-    
+        
 
     // // Fonction télécharger une photo dans l'annonce
     // public function telecharger_photo(){
