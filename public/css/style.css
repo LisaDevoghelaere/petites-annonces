@@ -172,6 +172,7 @@ footer p a {
   font-size: 1.5rem;
   margin-top: 0.5rem;
   margin-bottom: 0.8rem;
+  padding-bottom: 0.3rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -229,6 +230,45 @@ h2 {
 }
 
 @media screen and (max-width: 479px) {
+  .add {
+    font-size: 2rem;
+  }
+  .add i {
+    color: #381a0b;
+  }
+  h1 {
+    font-size: 2.5rem;
+    text-align: right;
+  }
+  h1 a:hover {
+    color: #0b7a75;
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
+  }
+  h1 a img {
+    margin-bottom: 0.8rem;
+    text-align: left;
+  }
+  header {
+    padding-top: 1.5rem;
+    border-bottom: solid 4px;
+    border-bottom-color: #0b7a75;
+  }
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  /*-------------------------------------Phone cartes annonces----------------------------*/
   .mini-carte {
     width: 21.85rem;
     height: 8.75rem;
@@ -273,6 +313,34 @@ h2 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     display: block;
+  }
+  /*-------------------------------------Phone Annonce----------------------------*/
+  .flex-detail-annonce {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .photo-annonce {
+    max-width: 250px;
+    height: auto;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .detail-annonce {
+    margin: 1rem;
+    padding: 1rem;
+    border: solid 1px #ef8275;
+    border-radius: 10px;
+    max-width: 350px;
   }
 }
 /*# sourceMappingURL=style.css.map */
