@@ -38,22 +38,14 @@ $router->setBasePath('');
 
     // Page ajout
     $router->map('GET', '/ajout', function (){
-        if(isset($_POST['ann_titre'])){
-            \App\Ajout::add();
-        }
     //render template
     $twig = new Twig('ajout.html.twig');
-    $twig->render(
-            
-    );
+    $twig->render();
+    });
 
-    
-});
-
-
-$router->map('POST', '/ajax-ajout', function (){
-    \App\Ajout::add();
-});
+    $router->map('POST', '/ajax-ajout', function (){
+        \App\Ajout::add();
+    });
     
    
     
