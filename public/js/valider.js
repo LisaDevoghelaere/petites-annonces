@@ -1,6 +1,6 @@
 // Ajax formulaire de confirmation de l'annonce
 
-const formValidate = document.getElementById('formValidate').children[0];
+const formValidate = document.getElementById('formValidation').children[0];
 console.log(formValidate);
 
 formValidate.addEventListener('submit', (e) => {
@@ -10,7 +10,7 @@ formValidate.addEventListener('submit', (e) => {
     let xhr = new XMLHttpRequest();
     
     console.log(data);
-    xhr.open('POST', 'ajax-post-update', true);
+    xhr.open('POST', 'ajax-valider', true);
     xhr.send(data);
     
     xhr.onreadystatechange = function() {

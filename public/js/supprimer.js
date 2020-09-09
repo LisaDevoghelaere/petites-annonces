@@ -1,11 +1,11 @@
-const buttonDelete = document.getElementById('deleteButton');
+const buttonDelete = document.getElementById('supprimerButton');
 
 buttonDelete.addEventListener('click', () => {
-    const modalDelete = document.getElementsByClassName('deleteValidate')[0];
+    const modalDelete = document.getElementsByClassName('supprimervalider')[0];
     modalDelete.classList.add('active');
 
-    const buttonYes = document.getElementById('deleteYes');
-    const buttonNo = document.getElementById('deleteNo');
+    const buttonOui = document.getElementById('deleteOui');
+    const buttonNon = document.getElementById('deleteNon');
 
     buttonNo.addEventListener('click', () => {
         modalDelete.classList.remove('active');
