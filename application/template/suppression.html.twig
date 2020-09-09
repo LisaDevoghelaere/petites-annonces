@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+<div class="flex-detail-annonce">
+    <div class="detail-annonce">
+        <h2>{{annonce.ann_titre}}</h2>
+        <p><img src="{{annonce.ann_image_url}}" class="photo-annonce" alt="photo de l'annonce"></p>
+        <p>{{annonce.cat_libelle}} <br>
+            {{annonce.ann_description}} <br>
+            {{annonce.ann_prix}} €<br>
+            {{annonce.ann_date_ecriture}}</p>
+        <h3>Contacter l'annonceur</h3>
+        <p>{{annonce.usr_nom}} {{annonce.usr_prenom}} <br>
+            {{annonce.usr_courriel}} <br>
+            {{annonce.usr_telephone}}</p>
+    </div>
+    <div class="div-pdf">
+        <p class="add"><a href="http://popy/"><i class="fas fa-undo-alt"></i></a></p>
+        <h3>Enregister l'annonce :</h3>
+        <p>Cliquez ci-dessous pour enregistrer l'annnoce au format pdf
+        <br><a href="#"  class="add"><i class="fas fa-file-download"></i></a></p>
+    </div>
+</div>
+<div class="deleteValidate">
+    <form>
+        <input type="hidden" name="unique_id" value="{{ annonce.ann_unique_id }}">
+        <p>Voulez-vous supprimer cette annonce ?</p>
+        <div class="d-flex justify-content-around">
+            <input type="submit" class="btn btn-danger" value="OUI">
+            <button class="btn btn-secondary" id="deleteNo">NON</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock content %}
+
+{% block javascripts %}
+        <script src="js/supprimer.js"></script>
+{% endblock javascripts %}

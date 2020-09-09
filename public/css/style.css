@@ -38,7 +38,6 @@ h1 a {
 }
 
 h1 a:hover {
-  color: #0b7a75;
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
 }
@@ -239,6 +238,11 @@ h2 {
 .btn-secondary.focus, .btn-secondary:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.retour-ajout {
+  text-align: right;
+  margin: 1rem;
 }
 
 @media screen and (max-width: 479px) {

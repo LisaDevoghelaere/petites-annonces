@@ -31,7 +31,6 @@ h1{
     a{
         color : $marron;
         &:hover{
-            color : $turquoise;
             text-decoration-line: none;
         }
         img{
@@ -185,6 +184,10 @@ h2{
 }
 .btn-secondary.focus, .btn-secondary:focus{
     box-shadow: none;
+}
+.retour-ajout{
+    text-align: right;
+    margin : 1rem;
 }
 @media#{$smartphone}{
     //-------------------------------------Phone base--------------------------
