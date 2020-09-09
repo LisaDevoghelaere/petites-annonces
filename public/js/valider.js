@@ -1,0 +1,29 @@
+// Ajax formulaire de confirmation de l'annonce
+
+const formValidate = document.getElementById('formValidate').children[0];
+console.log(formValidate);
+
+formValidate.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    let data = new FormData(formValidate);
+    let xhr = new XMLHttpRequest();
+    
+    console.log(data);
+    xhr.open('POST', 'ajax-post-update', true);
+    xhr.send(data);
+    
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            const popUp = document.querySelector('.popUp');
+            popUp.classList.add('active');
+            const reponse = document.querySelector('.popUp > DIV > P');
+            console.log(xhr.responseText);
+            if(xhr.responseText == '"OK"'){
+                reponse.innerHTML = 'Annonce confirmée<br/><a href="/">Retour à l\'accueil</a>'
+            } else{
+                reponse.innerHTML = 'Une erreur s\'est produite, merci de réessayer plus tard<br/><a href="/">Retour à l\'accueil</a>'
+            }
+        }
+    };
+});
