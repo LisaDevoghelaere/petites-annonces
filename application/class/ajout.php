@@ -45,7 +45,7 @@ class Ajout{
 
             // si l'id est null alors on insere
             else{
-                echo 'test else';
+                
                 $base->qw('INSERT INTO utilisateur (usr_nom, usr_prenom, usr_telephone, usr_courriel) VALUES (:usr_nom, :usr_prenom, :usr_telephone, :usr_courriel)',
                 array(
                     array('usr_nom', $usr_nom,\PDO::PARAM_STR),
@@ -76,7 +76,9 @@ class Ajout{
 
 
             //set unique id
-            $crypto = \App\Crypt::hashCode($usr_courriel, strval($utilisateur_id));
+            // $crypto = \App\Crypt::hashCode($usr_courriel, strval($utilisateur_id));
+            $crypto = \App\Crypt::encrypt_decrypt("encrypt", $usr_courriel. strval($utilisateur_id));
+            
 
             
           

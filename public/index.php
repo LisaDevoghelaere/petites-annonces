@@ -47,6 +47,34 @@ $router->setBasePath('');
         \App\Ajout::add();
     });
     
+
+    //page validation
+    $router->map('GET', '/valid-[:crypto]', function ($crypto){
+        //test if unique_id exists
+    // if((!\App\Annonce::Exists($crypto))||(!\App\Annonce::IsValidated($crypto))){
+    //     header('Location: /');
+    // }
+    echo 'Page validation lisa';
+    $twig = new Twig('validation.html.twig');
+        $twig->render([
+            'crypto' => $crypto
+        ]);
+
+    });
+
+
+     //mail suppression
+     $router->map('GET', '/del-[:crypto]', function ($crypto){
+        
+    echo 'Page suppression lisa';
+    $twig = new Twig('suppression.html.twig');
+        $twig->render([
+            'crypto' => $crypto
+        ]);
+
+    });
+
+    
    
     
   //catégories
@@ -58,4 +86,3 @@ $match = $router->match();
 if ($match !== null) {
 call_user_func_array($match['target'], $match['params']);
 }
-
