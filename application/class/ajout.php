@@ -23,7 +23,7 @@ class Ajout{
             if(isset($_POST['ann_image_url'])){
                 $ann_image_url = $_POST['ann_image_url'];
             }else{
-                $ann_image_url = "public/media/annonce/sandman.jpg";
+                $ann_image_url = "public/media/logo/back-popy.png";
             };
 
             //Connexion

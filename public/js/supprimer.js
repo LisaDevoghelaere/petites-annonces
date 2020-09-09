@@ -18,7 +18,7 @@ buttonDelete.addEventListener('click', () => {
         let data = new FormData(form);
         let xhr = new XMLHttpRequest();
         
-        xhr.open('POST', 'ajax-post-delete', true);
+        xhr.open('POST', 'ajax-supprimer', true);
         xhr.send(data);
         
         xhr.onreadystatechange = function() {
