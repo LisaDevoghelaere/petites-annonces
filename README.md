@@ -35,7 +35,10 @@ Sur la page listant les annonces afficher un lien permettant de publier une anno
 * Sous l'annonce ont propose de télécharger l'annonce en PDF	
 
 
-**Le formulaires seront validés par JS**	
-**Technos : Composer, PHP POO, TWIG pour le rendu frontend, SASS(optionnel), GIT, JS, HTML, CSS, librairie PHP pour les PDF, AltoRouteur pour le routeur**
-**Remarque :  On ne veut pas de pattern MVC, on reste en programmation objet POO simple**
-**Remarque : Pensez à crypter les accès de validation et modification**
+*Le formulaires seront validés par JS*
+
+*Technos : Composer, PHP POO, TWIG pour le rendu frontend, SASS(optionnel), GIT, JS, HTML, CSS, librairie PHP pour les PDF, AltoRouteur pour le routeur*
+
+*Remarque :  On ne veut pas de pattern MVC, on reste en programmation objet POO simple*
+
+*Remarque : Pensez à crypter les accès de validation et modification*
