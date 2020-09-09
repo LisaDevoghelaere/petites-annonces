@@ -37,10 +37,7 @@ class Ajout{
             
             if(!empty($req)){
                 $utilisateur_id = $req;
-          
-                $utilisateur_id = intval($utilisateur_id[0]->id);
-
-                
+                $utilisateur_id = intval($utilisateur_id[0]->id);  
             }
 
             // si l'id est null alors on insere
@@ -54,12 +51,8 @@ class Ajout{
                     array('usr_courriel', $usr_courriel,\PDO::PARAM_STR),
                     
                 ));
-                // $utilisateur_id = $base->q('SELECT id FROM utilisateur ORDER BY id DESC LIMIT 1');
                 $utilisateur_id = $base->q('SELECT max(id) as `id` FROM utilisateur');
-             
                 $utilisateur_id = intval($utilisateur_id[0]->id);
-               
-
             }
 
             //avoir la id de la categorie
@@ -68,27 +61,14 @@ class Ajout{
             $categorie_id = $req[0]->cat_id;
             $categorie_id = intval($categorie_id);
             
-
             // // définir dernier id
             // $req = $base->q("SELECT MAX(`ann_unique_id`) FROM `annonce`");
             // $ann_unique_id = $req[0]->ann_unique_id;
             // $ann_unique_id += 1;
 
-
             //set unique id
-            // $crypto = \App\Crypt::hashCode($usr_courriel, strval($utilisateur_id));
             $crypto = \App\Crypt::encrypt_decrypt("encrypt", $usr_courriel. strval($utilisateur_id));
             
-
-            
-          
-            
-
-
-
-
-// $cat_id = 5;
-
             // date_creation
             $ann_date_ecriture = date("Y-m-d");
 
@@ -109,6 +89,8 @@ class Ajout{
             $sendMail = new Mail('valid', $usr_courriel, $usr_nom, $usr_prenom, $crypto);
             echo json_encode("ok");
         }
+
+        
     
         
 
