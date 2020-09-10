@@ -42,7 +42,7 @@ class Mail
             if ($type === 'valid') {
                 $link = $host . '/valid-' . $motdepasse;
                 $mail->Subject = 'Confirmez votre annonce';
-                $mail->Body ='<h1><a href="http://popy/"><img src="../../public/media/logo/popy1-2.png" alt=""> POPY</a></h1><br><br><p>Bonjour '.$prenom.' !</p><br><a href="'.$link .'">Cliquez sur ce lien pour confirmer votre annonce.</a>';
+                $mail->Body ='<h1><a href="http://popy/"><img src="../../public/media/logo/popy1-2.png" alt="logo popy"> POPY</a></h1><br><br><p>Bonjour '.$prenom.' !</p><br><a href="'.$link .'">Cliquez sur ce lien pour confirmer votre annonce.</a>';
             } elseif ($type === 'delete') {
                 $link = $host . '/del-' . $motdepasse;
                 $mail->Subject = 'Votre annonce a été publiée';

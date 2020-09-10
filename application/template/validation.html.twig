@@ -7,7 +7,7 @@
     <form method="POST" class="needs-validation" novalidate>
     <div class="form-group">
             <label for="exampleFormControlInput1">Titre</label>
-            <input name="ann_titre" type="text" class="form-control" id="exampleFormControlInput1" value="{{ post.ann_titre }}" required>
+            <input name="ann_titre" type="text" class="form-control" id="exampleFormControlInput1" value="{{ annonce.ann_titre }}" required>
             <div class="invalid-feedback">
                     Veuillez entrer un titre
             </div>
@@ -15,7 +15,7 @@
     <div class="form-group">
             <label for="">Catégorie</label>
             <select name="cat_libelle" class="form-control" id="exampleFormControlSelect1" required>
-                    <option value="0" selected>{{ post.cat_libelle }}</option>
+                    <option value="0" selected>{{ annonce.cat_libelle }}</option>
                     <option>Vêtement</option>
                     <option>meuble</option>
                     <option>voiture</option>
@@ -31,46 +31,46 @@
     </div>
     <div class="form-group">
             <label for="exampleFormControlTextarea1">Description</label>
-            <textarea name="ann_description" class="form-control" id="exampleFormControlTextarea1" value="{{ post.ann_description }}" rows="3" required></textarea>
+            <textarea name="ann_description" class="form-control" id="exampleFormControlTextarea1" value="{{ annonce.ann_description }}" rows="3" required></textarea>
             <div class="invalid-feedback">
                     Veuillez entrer une description
             </div>
     </div>
         <div class="form-group">
             <label for="">Prix</label>
-            <input name="ann_prix" type="text" class="form-control" id="exampleFormControlInput1" value="{{ post.ann_prix }}">
+            <input name="ann_prix" type="text" class="form-control" id="exampleFormControlInput1" value="{{ annonce.ann_prix }}">
         </div>
     <div class="form-group">
             <label for="">Votre nom</label>
-            <input name="usr_nom" type="text" class="form-control" id="exampleFormControlInput1" value="{{ post.usr_nom }}" required>
+            <input name="usr_nom" type="text" class="form-control" id="exampleFormControlInput1" value="{{ annonce.usr_nom }}" required>
             <div class="invalid-feedback">
                     Veuillez entrer un nom
             </div>
     </div>
     <div class="form-group">
             <label for="">Votre prénom</label>
-            <input name="usr_prenom" type="text" class="form-control" id="exampleFormControlInput1" value="{{ post.usr_prenom }}" required>
+            <input name="usr_prenom" type="text" class="form-control" id="exampleFormControlInput1" value="{{ annonce.usr_prenom }}" required>
             <div class="invalid-feedback">
                     Veuillez entrer un prénom
             </div>
     </div>
     <div class="form-group">
             <label for="">Votre courriel</label>
-            <input name="usr_courriel" type="email" class="form-control" id="exampleFormControlInput1" value="{{ post.usr_courriel }}" required>
+            <input name="usr_courriel" type="email" class="form-control" id="exampleFormControlInput1" value="{{ annonce.usr_courriel }}" required>
             <div class="invalid-feedback">
                     Veuillez entrer un courriel
             </div>
     </div>
     <div class="form-group">
             <label for="">Votre numéro de téléphone</label>
-            <input name="usr_telephone" type="text" class="form-control" id="exampleFormControlInput1" value="{{ post.usr_telephone }}" required>
+            <input name="usr_telephone" type="text" class="form-control" id="exampleFormControlInput1" value="{{ annonce.usr_telephone }}" required>
             <div class="invalid-feedback">
                     Veuillez entrer un numéro de téléphone
             </div>
     </div>
     <div class="form-group">
             <label for="">Charger une image</label>
-            <input name="ann_image_url" type="file" class="form-control" id="exampleFormControlInput1" value="{{ post.ann_image_url }}">
+            <input name="ann_image_url" type="file" class="form-control" id="exampleFormControlInput1" value="{{ annonce.ann_image_url }}">
     </div>
        
     <button id="valider" class="btn btn-secondary btn-lg btn-block">Confirmer</button>
