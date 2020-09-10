@@ -154,24 +154,36 @@ class Ajout{
             echo json_encode($validation);
         }
     
-        public static function Supprimer(){
+        // public static function Supprimer(){
     
-            if(isset($_POST['ann_unique_id']) && !empty($_POST['ann_unique_id'])){
-                $ann_unique_id = $_POST['ann_unique_id'];
-            }else{
-                echo json_encode("Cette annonce n'existe pas");
-                return;
-            }
+        //     if(isset($_POST['ann_unique_id']) && !empty($_POST['ann_unique_id'])){
+        //         $ann_unique_id = $_POST['ann_unique_id'];
+        //     }else{
+        //         echo json_encode("Cette annonce n'existe pas");
+        //         return;
+        //     }
     
+        //     //Connexion
+        //     $base = new \App\Db();
+    
+        //     //DELETE POST
+        //     $base->qw('DELETE FROM annonce WHERE ann_unique_id = :ann_unique_id',
+        //         array(array('ann_unique_id',$ann_unique_id,\PDO::PARAM_INT)));
+    
+        //     echo json_encode('OK ');
+        // }
+        public static function Supprimer($crypto){
+
             //Connexion
             $base = new \App\Db();
-    
-            //DELETE POST
-            $base->qw('DELETE FROM annonce WHERE ann_unique_id = :ann_unique_id',
-                array(array('ann_unique_id',$ann_unique_id,\PDO::PARAM_INT)));
-    
+            
+            //supprimer l'annonce
+            $base->qw('DELETE FROM annonce WHERE crypto = :crypto',
+            array(array('crypto',$crypto,\PDO::PARAM_STR)));
+            
             echo json_encode('OK ');
-        }
+            }
+
 
         public function Validation(){
             if(isset($_POST['ann_titre']) && !empty($_POST['ann_titre'])){
