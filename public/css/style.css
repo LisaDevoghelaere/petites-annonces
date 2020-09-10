@@ -290,6 +290,7 @@ h2 {
 #modal_dialog button {
   background-color: #ef8275;
   color: #f9f4f5;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 479px) {

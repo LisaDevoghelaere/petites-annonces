@@ -17,7 +17,7 @@ formValidate.addEventListener('submit', (e) => {
         if (this.readyState == 4 && this.status == 200) {
             const modalOn = document.querySelector('#modal');
             modalOn.classList.remove('hidden');
-            const btnModal = document.querySelector('btnModal');
+            const btnModal = document.querySelector('#btnModal');
             console.log(xhr.responseText);
             if(xhr.responseText == '"OK"'){
                 btnModal.innerHTML = 'Annonce confirmée<br/><a href="/">Retour à l\'accueil</a>'
