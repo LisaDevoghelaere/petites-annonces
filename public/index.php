@@ -42,15 +42,17 @@ $router->setBasePath('');
     //render template
     $twig = new Twig('ajout.html.twig');
     $twig->render();
+    echo 'test ajout';
     });
 
     $router->map('POST', '/ajax-ajout', function (){
-        \App\Ajout::add();
+        echo 'test ajout';
+        // \App\Ajout::add();
     });
     
 
     //page validation
-    $router->map('GET', '/valid-[:ann_unique_id]', function ($crypto){
+    $router->map('GET', '/valid-[:crypto]', function ($crypto){
         // test if unique_id exists
     // if((!\App\Annonce::Exists($ann_unique_id))||(!\App\Annonce::IsValidated($ann_unique_id))){
     //     header('Location: /');
@@ -68,18 +70,20 @@ $router->setBasePath('');
     });
 
     // Ajax valider
-    $router->map('POST', '/ajax-valider', function(){
+    $router->map('GET', '/ajax-valider', function(){
+        // echo 'test validation' ;
         \App\Ajout::Update();
     });
 
 
      //mail suppression
      $router->map('GET', '/del-[:crypto]', function ($crypto){
-        
-        $twig = new Twig('suppression.html.twig');
-            $twig->render([
-                'crypto' => $crypto
-            ]);
+        \App\Ajout::Supprimer($crypto);
+
+        // $twig = new Twig('suppression.html.twig');
+        //     $twig->render([
+        //         'crypto' => $crypto
+        //     ]);
 
     });
 
