@@ -3,6 +3,7 @@
 require '../vendor/autoload.php';
 use App\Twig;
 use App\Annonce;
+use App\Valid;
 
 // Le routeur
 $uri = $_SERVER['REQUEST_URI'];
@@ -49,28 +50,37 @@ $router->setBasePath('');
     
 
     //page validation
-    $router->map('GET', '/valid-[:crypto]', function ($crypto){
-        //test if unique_id exists
-    // if((!\App\Annonce::Exists($crypto))||(!\App\Annonce::IsValidated($crypto))){
+    $router->map('GET', '/valid-[:ann_unique_id]', function ($crypto){
+        // test if unique_id exists
+    // if((!\App\Annonce::Exists($ann_unique_id))||(!\App\Annonce::IsValidated($ann_unique_id))){
     //     header('Location: /');
     // }
-    echo 'Page validation lisa';
+    $annonce = new Valid($crypto);
+    var_dump($annonce->data);
+    // echo 'Page validation lisa';
     $twig = new Twig('validation.html.twig');
         $twig->render([
-            'crypto' => $crypto
+            'annonce' => $annonce->data[0],
+            'crypto' => $crypto,
+            
         ]);
 
+    });
+
+    // Ajax valider
+    $router->map('POST', '/ajax-valider', function(){
+        \App\Ajout::Update();
     });
 
 
      //mail suppression
      $router->map('GET', '/del-[:crypto]', function ($crypto){
         
-    echo 'Page suppression lisa';
-    $twig = new Twig('suppression.html.twig');
-        $twig->render([
-            'crypto' => $crypto
-        ]);
+        echo 'Page suppression lisa';
+        $twig = new Twig('suppression.html.twig');
+            $twig->render([
+                'crypto' => $crypto
+            ]);
 
     });
 
