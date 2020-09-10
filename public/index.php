@@ -76,7 +76,6 @@ $router->setBasePath('');
      //mail suppression
      $router->map('GET', '/del-[:crypto]', function ($crypto){
         
-        echo 'Page suppression lisa';
         $twig = new Twig('suppression.html.twig');
             $twig->render([
                 'crypto' => $crypto
