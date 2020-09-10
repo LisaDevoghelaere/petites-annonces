@@ -7,13 +7,10 @@ body{
         color : $marron;
     }
 }
-a{
-    color : $marron;
-    &:hover{
-        color : $turquoise;
-        text-decoration-line: none;
-    }
-}
+// a{
+//     color : $marron;
+   
+// }
 //-------------------------------------base--------------------------
 .add{
     font-size : 2rem;
@@ -94,6 +91,10 @@ footer{
 }
 .annonce{
     display : block;
+    &:hover{
+        color : $turquoise;
+        text-decoration-line: none;
+    }
     
 }
 .mini-carte{

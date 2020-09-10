@@ -8,16 +8,6 @@ body p {
   color: #381a0b;
 }
 
-a {
-  color: #381a0b;
-}
-
-a:hover {
-  color: #0b7a75;
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
-}
-
 .add {
   font-size: 2rem;
 }
@@ -115,6 +105,12 @@ footer p a {
 
 .annonce {
   display: block;
+}
+
+.annonce:hover {
+  color: #0b7a75;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 
 .mini-carte {
