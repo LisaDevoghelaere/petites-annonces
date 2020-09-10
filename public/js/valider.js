@@ -20,9 +20,9 @@ formValidate.addEventListener('submit', (e) => {
             const btnModal = document.querySelector('btnModal');
             console.log(xhr.responseText);
             if(xhr.responseText == '"OK"'){
-                reponse.innerHTML = 'Annonce confirmée<br/><a href="/">Retour à l\'accueil</a>'
+                btnModal.innerHTML = 'Annonce confirmée<br/><a href="/">Retour à l\'accueil</a>'
             } else{
-                reponse.innerHTML = 'Une erreur s\'est produite, merci de réessayer plus tard<br/><a href="/">Retour à l\'accueil</a>'
+                btnModal.innerHTML = 'Une erreur s\'est produite, merci de réessayer plus tard<br/><a href="/">Retour à l\'accueil</a>'
             }
         }
     };
