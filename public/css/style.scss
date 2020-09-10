@@ -7,16 +7,22 @@ body{
         color : $marron;
     }
 }
-// a{
-//     color : $marron;
+a{
+    color : $marron;
+    &:hover{
+        color : $turquoise;
+    }
    
-// }
+}
 //-------------------------------------base--------------------------
 .add{
     font-size : 2rem;
     i{
         //color : rgb(223, 172, 78);
         color : $marron;
+        &:hover{
+            color : $turquoise;
+        }
 
     }
 }
@@ -29,6 +35,7 @@ h1{
         color : $marron;
         &:hover{
             text-decoration-line: none;
+            color : $marron;
         }
         img{
             margin-bottom: 0.8rem;
@@ -189,6 +196,34 @@ h2{
 .retour-ajout{
     text-align: right;
     margin : 1rem;
+}
+/*--------------------------Validation----------------------*/
+#modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(56, 26, 11,0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#modal.hidden{
+    display: none;
+}
+#modal_dialog{
+    width: 100%;
+    max-width : 33rem;
+    max-height : 10rem;
+    background-color: $blanc;
+    border : 1px solid salmon;
+    border-radius: 3px;
+    text-align: center;
+    button{
+        background-color : $saumon;
+        color : $blanc;
+    }
 }
 @media#{$smartphone}{
     //-------------------------------------Phone base--------------------------

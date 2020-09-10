@@ -8,12 +8,24 @@ body p {
   color: #381a0b;
 }
 
+a {
+  color: #381a0b;
+}
+
+a:hover {
+  color: #0b7a75;
+}
+
 .add {
   font-size: 2rem;
 }
 
 .add i {
   color: #381a0b;
+}
+
+.add i:hover {
+  color: #0b7a75;
 }
 
 h1 {
@@ -30,6 +42,7 @@ h1 a {
 h1 a:hover {
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
+  color: #381a0b;
 }
 
 h1 a img {
@@ -239,6 +252,44 @@ h2 {
 .retour-ajout {
   text-align: right;
   margin: 1rem;
+}
+
+/*--------------------------Validation----------------------*/
+#modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(56, 26, 11, 0.45);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#modal.hidden {
+  display: none;
+}
+
+#modal_dialog {
+  width: 100%;
+  max-width: 33rem;
+  max-height: 10rem;
+  background-color: #f9f4f5;
+  border: 1px solid salmon;
+  border-radius: 3px;
+  text-align: center;
+}
+
+#modal_dialog button {
+  background-color: #ef8275;
+  color: #f9f4f5;
 }
 
 @media screen and (max-width: 479px) {
