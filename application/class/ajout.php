@@ -7,7 +7,8 @@ use Respect\Validation\Validator as v;
 class Ajout{
     public $data=[];
     public static function add(){
-        
+
+            $validation= (new self)->Validation();
             // les valeurs
             $ann_titre = $_POST['ann_titre'];
             $cat_libelle  = $_POST['cat_libelle'];
@@ -89,7 +90,7 @@ class Ajout{
             );
             // Envoi de mail pour validation de l'annonce après ajout
             $sendMail = new Mail('valid', $usr_courriel, $usr_nom, $usr_prenom, $crypto);
-            echo json_encode("ok");
+            echo json_encode($validation);
         }
 
 
