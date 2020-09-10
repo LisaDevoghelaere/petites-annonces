@@ -90,7 +90,7 @@ class Ajout{
             );
             // Envoi de mail pour validation de l'annonce après ajout
             $sendMail = new Mail('valid', $usr_courriel, $usr_nom, $usr_prenom, $crypto);
-            echo json_encode($validation);
+            echo json_encode('ok');
         }
 
 
@@ -151,7 +151,7 @@ class Ajout{
             }
             $sendMail = new Mail('delete', $usr_courriel, $usr_nom, $usr_prenom, $ann_unique_id);
            
-            echo json_encode($validation);
+            echo json_encode("ok");
         }
     
         // public static function Supprimer(){
