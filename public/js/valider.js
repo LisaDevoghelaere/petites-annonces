@@ -15,9 +15,9 @@ formValidate.addEventListener('submit', (e) => {
     
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            const popUp = document.querySelector('.popUp');
-            popUp.classList.add('active');
-            const reponse = document.querySelector('.popUp > DIV > P');
+            const modalOn = document.querySelector('#modal');
+            modalOn.classList.remove('hidden');
+            const btnModal = document.querySelector('btnModal');
             console.log(xhr.responseText);
             if(xhr.responseText == '"OK"'){
                 reponse.innerHTML = 'Annonce confirmée<br/><a href="/">Retour à l\'accueil</a>'

@@ -4,7 +4,7 @@
 <div id="formValidation">
     <h2>Validez votre annonce</h2>
     <p>Voici l'annonce que vous nous avez envoyés, vous pouvez vérifier les différents champs puis  valider l'annonce qui sera alors publiée.</p>
-    <form method="POST" class="needs-validation" novalidate>
+    <form method="POST">
     <div class="form-group">
             <label for="exampleFormControlInput1">Titre</label>
             <input name="ann_titre" type="text" class="form-control" id="exampleFormControlInput1" value="{{ annonce.ann_titre }}" required>
@@ -31,7 +31,7 @@
     </div>
     <div class="form-group">
             <label for="exampleFormControlTextarea1">Description</label>
-            <textarea name="ann_description" class="form-control" id="exampleFormControlTextarea1" value="{{ annonce.ann_description }}" rows="3" required></textarea>
+            <textarea name="ann_description" class="form-control" id="exampleFormControlTextarea1" value="{{ annonce.ann_description }}" rows="3" required>{{ annonce.ann_description }}</textarea>
             <div class="invalid-feedback">
                     Veuillez entrer une description
             </div>
@@ -69,12 +69,17 @@
             </div>
     </div>
     <div class="form-group">
-            <label for="">Charger une image</label>
+            <label for="">{{ annonce.ann_image_url }}</label>
             <input name="ann_image_url" type="file" class="form-control" id="exampleFormControlInput1" value="{{ annonce.ann_image_url }}">
     </div>
        
     <button id="valider" class="btn btn-secondary btn-lg btn-block">Confirmer</button>
     </form>
+</div>
+<div id="modal" class="hidden">
+        <div id="modal_dialogue">
+        <button class="btn btn-lg" id="btnModal"> Votre annonce a bien été validée</button>
+        </div>
 </div>
 
 {% endblock %}
