@@ -1,21 +1,22 @@
 
-// var envoyer = document.getElementById('envoyer');
+var envoyer = document.getElementById('envoyer');
 
-// console.log(envoyer);
+console.log(envoyer);
 
-// envoyer.addEventListener('click', function(e){
-//     e.preventDefault();
-//     var form = document.getElementById('add');
-//     var formdata = new FormData(form);
-//     console.log(form);
+envoyer.addEventListener('click', function(e){
+    e.preventDefault();
+    validBoot();
+    var form = document.getElementById('add');
+    var formdata = new FormData(form);
+    console.log(form);
 
 
-//     fetch('/ajax-ajout', { method : "post", body : formdata })
-//     .then( response => response.json().then( data =>{
-//         document.location.href="/"; 
-//     }))
-// })
-(function() {
+    fetch('/ajax-ajout', { method : "post", body : formdata })
+    .then( response => response.json().then( data =>{
+        document.location.href="/"; 
+    }))
+})
+function validBoot() {
     'use strict';
     window.addEventListener('load', function() {
     
@@ -31,4 +32,4 @@
     }, false);
     });
     }, false);
-    })();
+    };
