@@ -38,7 +38,7 @@ class AjaxCarte{
         //Connexion
         $base = new \App\Db();
 
-        $sql = "SELECT ann_unique_id, ann_titre, ann_description, ann_prix, ann_image_url, ann_date_validation, usr_nom, cat_libelle FROM annonce INNER JOIN categorie ON categorie_id = cat_id INNER JOIN utilisateur ON id = utilisateur_id ORDER BY ann_date_validation";
+        $sql = "SELECT ann_unique_id, ann_titre, ann_description, ann_prix, ann_image_url, ann_date_validation, usr_nom, cat_libelle FROM annonce INNER JOIN categorie ON categorie_id = cat_id INNER JOIN utilisateur ON id = utilisateur_id WHERE ann_est_valide = 1 ORDER BY ann_date_validation";
         $data = $base->q($sql);  
         return $data;
     }
@@ -47,7 +47,7 @@ class AjaxCarte{
         $categorie = $_POST['categorie'];
        
         $base = new \App\Db();
-        $sql = "SELECT ann_unique_id, ann_titre, ann_description, ann_prix, ann_image_url, ann_date_validation, usr_nom, cat_libelle FROM annonce INNER JOIN categorie ON categorie_id = cat_id INNER JOIN utilisateur ON id = utilisateur_id WHERE cat_id = :categorie";    
+        $sql = "SELECT ann_unique_id, ann_titre, ann_description, ann_prix, ann_image_url, ann_date_validation, usr_nom, cat_libelle FROM annonce INNER JOIN categorie ON categorie_id = cat_id INNER JOIN utilisateur ON id = utilisateur_id WHERE cat_id = :categorie and ann_est_valide = 1";    
         $data = $base->q($sql, array(array('categorie', $categorie, \PDO::PARAM_INT)));  
         return $data;
     }

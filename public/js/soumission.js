@@ -1,34 +1,34 @@
 
-// var envoyer = document.getElementById('envoyer');
+var envoyer = document.getElementById('envoyer');
 
-// console.log(envoyer);
+console.log(envoyer);
 
-// envoyer.addEventListener('click', function(e){
-//     e.preventDefault();
-//     var form = document.getElementById('add');
-//     var formdata = new FormData(form);
-//     console.log(form);
+envoyer.addEventListener('click', function(e){
+    e.preventDefault();
+    var form = document.getElementById('add');
+    var formdata = new FormData(form);
+    console.log(form);
 
 
-//     fetch('/ajax-ajout', { method : "post", body : formdata })
-//     .then( response => response.json().then( data =>{
-//         document.location.href="/"; 
-//     }))
-// })
-(function() {
-    'use strict';
-    window.addEventListener('load', function() {
+    fetch('/ajax-ajout', { method : "post", body : formdata })
+    .then( response => response.json().then( data =>{
+        document.location.href="/"; 
+    }))
+})
+// (function() {
+//     'use strict';
+//     window.addEventListener('load', function() {
     
-    var forms = document.getElementsByClassName('needs-validation');
+//     var forms = document.getElementsByClassName('needs-validation');
     
-    var validation = Array.prototype.filter.call(forms, function(form) {
-    form.addEventListener('submit', function(event) {
-    if (form.checkValidity() === false) {
-    event.preventDefault();
-    event.stopPropagation();
-    }
-    form.classList.add('was-validated');
-    }, false);
-    });
-    }, false);
-    })();
+//     var validation = Array.prototype.filter.call(forms, function(form) {
+//     form.addEventListener('submit', function(event) {
+//     if (form.checkValidity() === false) {
+//     event.preventDefault();
+//     event.stopPropagation();
+//     }
+//     form.classList.add('was-validated');
+//     }, false);
+//     });
+//     }, false);
+//     })();

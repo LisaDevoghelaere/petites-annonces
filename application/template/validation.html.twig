@@ -4,7 +4,7 @@
 <div id="formValidation">
     <h2>Validez votre annonce</h2>
     <p>Voici l'annonce que vous nous avez envoyés, vous pouvez vérifier les différents champs puis  valider l'annonce qui sera alors publiée.</p>
-    <form method="POST">
+    <form id="valid" method="POST">
     <div class="form-group">
             <label for="exampleFormControlInput1">Titre</label>
             <input name="ann_titre" type="text" class="form-control" id="exampleFormControlInput1" value="{{ annonce.ann_titre }}" required>
@@ -12,18 +12,11 @@
                     Veuillez entrer un titre
             </div>
     </div>
+    <input name="crypto" type="hidden" class="form-control"  placeholder="crypto" value="{{ crypto }}">
     <div class="form-group">
             <label for="">Catégorie</label>
             <select name="cat_libelle" class="form-control" id="exampleFormControlSelect1" required>
-                    <option value="0" selected>{{ annonce.cat_libelle }}</option>
-                    <option>Vêtement</option>
-                    <option>meuble</option>
-                    <option>voiture</option>
-                    <option>Appareils électroniques/multimédia</option>
-                    <option>jeux/jouets</option>
-                    <option>Divertissements/loisirs</option>
-                    <option>Services</option>
-                    <option>Autre</option>        
+                    <option value="{{ annonce.cat_libelle }}">{{ annonce.cat_libelle }}</option>     
             </select>
             <div class="invalid-feedback">
                     Veuillez entrer une catégorie
@@ -70,7 +63,8 @@
     </div>
     <div class="form-group">
             <label for="">{{ annonce.ann_image_url }}</label>
-            <input name="ann_image_url" type="file" class="form-control" id="exampleFormControlInput1" value="{{ annonce.ann_image_url }}">
+            <input name="file" type="file" class="form-control" id="exampleFormControlInput1">
+            <input name="ann_image_url" type="hidden" value="{{ annonce.ann_image_url }}">
     </div>
        
     <button id="valider" class="btn btn-secondary btn-lg btn-block">Confirmer</button>
@@ -78,7 +72,7 @@
 </div>
 <div id="modal" class="hidden">
         <div id="modal_dialogue">
-        <button class="btn btn-lg" id="btnModal"> Votre annonce a bien été validée</button>
+        <button type="submit" class="btn btn-lg" id="btnModal"> Votre annonce a bien été validée</button>
         </div>
 </div>
 

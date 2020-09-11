@@ -11,18 +11,19 @@
                 Veuillez entrer un titre
         </div>
 </div>
+
 <div class="form-group">
         <label for="">Catégorie</label>
-        <select name="cat_libelle" class="form-control" id="exampleFormControlSelect1" required>
+        <select name="cat_libelle" class="form-control" id="" required>
                 <option value="0" selected>Catégories</option>
-                <option>Vêtement</option>
-                <option>meuble</option>
-                <option>voiture</option>
-                <option>Appareils électroniques/multimédia</option>
-                <option>jeux/jouets</option>
-                <option>Divertissements/loisirs</option>
-                <option>Services</option>
-                <option>Autre</option>        
+                <option value="Vêtement">Vêtement</option>
+                <option value="meuble">meuble</option>
+                <option value="voiture">voiture</option>
+                <option value="Appareils électroniques/multimédia">Appareils électroniques/multimédia</option>
+                <option value="jeux/jouets">jeux/jouets</option>
+                <option value="Divertissements/loisirs">Divertissements/loisirs</option>
+                <option value="Services">Services</option>
+                <option value="Autre">Autre</option>        
         </select>
         <div class="invalid-feedback">
                 Veuillez entrer une catégorie
@@ -69,7 +70,7 @@
 </div>
 <div class="form-group">
         <label for="">Chargez une image (non obligatoire)</label>
-        <input name="ann_image_url" type="file" class="form-control" id="exampleFormControlInput1" placeholder="uploadez une image">
+        <input name="file" type="file" class="form-control" id="exampleFormControlInput1" placeholder="uploadez une image">
 </div>
    
 <button id="envoyer" class="btn btn-secondary btn-lg btn-block">Envoyer</button>
