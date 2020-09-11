@@ -63,18 +63,22 @@ $router->setBasePath('');
     //     header('Location: /');
     // }
     $annonce = new Valid($crypto);
-    
-
+    //categories request
+    $categories = new \App\Categories();
     $twig = new Twig('validation.html.twig');
         $twig->render([
             'annonce' => $annonce->data[0],
+            'categories' => $categories->data,
             'crypto' => $crypto,
             
         ]);
 
     });
 
-    
+    // PDF Download_________________________________________
+    $router->map('GET', '/download-pdf', function(){
+        \App\PdfExport::pdf();
+    });
 
 
      //mail suppression
