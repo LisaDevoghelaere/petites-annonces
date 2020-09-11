@@ -14,16 +14,14 @@
     </div>
     <div class="form-group">
             <label for="">Catégorie</label>
-            <select name="cat_libelle" class="form-control" id="exampleFormControlSelect1" required>
-                    <option value="0" selected>{{ annonce.cat_libelle }}</option>
-                    <option>Vêtement</option>
-                    <option>meuble</option>
-                    <option>voiture</option>
-                    <option>Appareils électroniques/multimédia</option>
-                    <option>jeux/jouets</option>
-                    <option>Divertissements/loisirs</option>
-                    <option>Services</option>
-                    <option>Autre</option>        
+            <select name="cat_libelle" class="form-control" id="exampleFormControlSelect1" value="{{ annonce.cat_libelle }}" required>
+                {% for element in categorie %}
+                        {% if element == annonce.cat_libelle %}
+                                <option selected>{{ element }}</option>
+                        {% else %}
+                                <option>{{ element }}</option>
+                        {% endif %}
+                {% endfor %}        
             </select>
             <div class="invalid-feedback">
                     Veuillez entrer une catégorie
