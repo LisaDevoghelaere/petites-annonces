@@ -15,10 +15,6 @@
     <input name="crypto" type="hidden" class="form-control"  placeholder="crypto" value="{{ crypto }}">
     <div class="form-group">
             <label for="">Catégorie</label>
-<<<<<<< HEAD
-            <select name="cat_libelle" class="form-control" id="exampleFormControlSelect1" required>
-                    <option value="{{ annonce.cat_libelle }}">{{ annonce.cat_libelle }}</option>     
-=======
             <select name="cat_libelle" class="form-control" id="exampleFormControlSelect1" value="{{ annonce.cat_libelle }}" required>
                 {% for element in categorie %}
                         {% if element == annonce.cat_libelle %}
@@ -27,7 +23,6 @@
                                 <option>{{ element }}</option>
                         {% endif %}
                 {% endfor %}        
->>>>>>> 918c3cfb28f029b08cd65c9fb6817c3eecda1d15
             </select>
             <div class="invalid-feedback">
                     Veuillez entrer une catégorie
