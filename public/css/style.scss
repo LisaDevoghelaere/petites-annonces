@@ -11,6 +11,7 @@ a{
     color : $marron;
     &:hover{
         color : $turquoise;
+        text-decoration-line: none;
     }
    
 }
