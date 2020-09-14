@@ -14,6 +14,8 @@ a {
 
 a:hover {
   color: #0b7a75;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 
 .add {
@@ -168,7 +170,7 @@ footer p a {
 }
 
 .contenant-txt {
-  background-color: #f9f4f5;
+  background-color: white;
   padding-left: 0.8rem;
   padding-right: 1rem;
   -webkit-box-sizing: border-box;
@@ -256,7 +258,7 @@ h2 {
 
 /*--------------------------Validation----------------------*/
 #modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;

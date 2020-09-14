@@ -5,6 +5,7 @@ console.log(envoyer);
 
 envoyer.addEventListener('click', function(e){
     e.preventDefault();
+    onReCaptchaValid(token);
     validBoot();
     var form = document.getElementById('add');
     var formdata = new FormData(form);
@@ -20,7 +21,7 @@ function validBoot() {
     'use strict';
     window.addEventListener('load', function() {
     
-//     var forms = document.getElementsByClassName('needs-validation');
+    var form = document.getElementsByClassName('needs-validation');
     
     var validation = Array.prototype.filter.call(forms, function(form) {
     form.addEventListener('submit', function(event) {
@@ -33,3 +34,7 @@ function validBoot() {
     });
     }, false);
     };
+
+function onReCaptchaValid(token) {
+    document.getElementById('add').submit();
+}

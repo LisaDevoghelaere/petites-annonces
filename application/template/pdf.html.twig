@@ -8,6 +8,7 @@
         }
         a{
         color : rgb(56, 26, 11);
+            text-decoration-line: none;
         }
         a:hover{
             color :rgb(11, 122, 117);
@@ -37,7 +38,7 @@
       {% block content %}
 <div class="detail-annonce">
     <h2>{{annonce.ann_titre}}</h2>
-        <p><img src="media/annonce/{{ ann_image_url }}" class="photo-annonce" alt="photo de l'annonce"></p>
+        <p><img src="/media/annonce/{{ ann_image_url }}" class="photo-annonce" alt="photo de l'annonce"></p>
     <p>{{annonce.cat_libelle}} <br>
         {{annonce.ann_description}} <br>
         {{annonce.ann_prix}} €<br>
