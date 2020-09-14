@@ -129,7 +129,7 @@ footer p a {
 .mini-carte {
   width: 33rem;
   height: 8.75rem;
-  background-color: #f9f4f5;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
