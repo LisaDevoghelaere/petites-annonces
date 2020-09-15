@@ -5,11 +5,7 @@
 <div class="flex-detail-annonce">
     <div class="detail-annonce">
         <h2>{{annonce.ann_titre}}</h2>
-        {%if annonce.ann_image_url != ""%}
         <p><img src="{{annonce.ann_image_url}}" class="photo-annonce" alt="photo de l'annonce"></p>
-        {% else %}
-          <img src="media/logo/back-popy.png" class="image-annonce" alt="" width="50" height="50">
-        {% endif %}
         <p>{{annonce.cat_libelle}} <br>
             {{annonce.ann_description}} <br>
             {{annonce.ann_prix}} €<br>

@@ -18,7 +18,7 @@ class Db {
 		try
 		{
 	    	$bdd = new \PDO(
-                'mysql:host=localhost;dbname='.$this->db.';charset=utf8mb4',
+                'mysql:host=localhost;dbname='.$this->db.';charset=utf8mb4', 
                 $this->login,
                 $this->password
             );

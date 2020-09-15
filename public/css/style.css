@@ -14,6 +14,8 @@ a {
 
 a:hover {
   color: #0b7a75;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 
 .add {
@@ -168,7 +170,7 @@ footer p a {
 }
 
 .contenant-txt {
-  background-color: #f9f4f5;
+  background-color: white;
   padding-left: 0.8rem;
   padding-right: 1rem;
   -webkit-box-sizing: border-box;
@@ -217,6 +219,7 @@ h2 {
   margin: 2rem;
   padding: 1.5rem;
   border: solid 1px #ef8275;
+  background-color: white;
   border-radius: 10px;
   max-width: 500px;
 }
@@ -281,7 +284,7 @@ h2 {
   width: 100%;
   max-width: 33rem;
   max-height: 10rem;
-  background-color: #f9f4f5;
+  background-color: white;
   border: 1px solid salmon;
   border-radius: 3px;
   text-align: center;
