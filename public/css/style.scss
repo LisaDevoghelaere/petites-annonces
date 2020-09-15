@@ -201,7 +201,7 @@ h2{
 }
 /*--------------------------Validation----------------------*/
 #modal{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -214,12 +214,12 @@ h2{
 #modal.hidden{
     display: none;
 }
-#modal_dialog{
+#modal_dialogue{
     width: 100%;
     max-width : 33rem;
     max-height : 10rem;
     background-color: white;
-    border : 1px solid salmon;
+    border : 1px solid $saumon;
     border-radius: 3px;
     text-align: center;
     button{
