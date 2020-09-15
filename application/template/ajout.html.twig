@@ -3,7 +3,7 @@
 {% block content %}
 <p class="add retour-ajout"><a href="http://popy/"><i class="fas fa-undo-alt"></i></a></p>
 
-<form id="add" method="POST" class="needs-validation" novalidate>
+<form id="add" method="POST" class="needs-validation">
 <div class="form-group">
         <label for="exampleFormControlInput1">Titre de l'annonce</label>
         <input name="ann_titre" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Titre de votre annonce" required>
@@ -73,7 +73,7 @@
         <input name="file" type="file" class="form-control" id="exampleFormControlInput1" placeholder="uploadez une image">
 </div>
    
-<button id="envoyer" class="g-recaptcha btn btn-secondary btn-lg btn-block" data-sitekey="6Ler6coZAAAAADL6BOS8rdtm0o_2o1chPK1xWQrA" data-callback='onReCaptchaValid'>Envoyer</button>
+<button id="envoyer" class="btn btn-secondary btn-lg btn-block">Envoyer</button>
 </form>
 
 {% endblock %}
