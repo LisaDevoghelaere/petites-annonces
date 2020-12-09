@@ -5,11 +5,8 @@
 <div class="flex-detail-annonce">
     <div class="detail-annonce">
         <h2>{{annonce.ann_titre}}</h2>
-        {%if annonce.ann_image_url != ""%}
+        
         <p><img src="{{annonce.ann_image_url}}" class="photo-annonce" alt="photo de l'annonce"></p>
-        {% else %}
-          <img src="media/logo/back-popy.png" class="image-annonce" alt="" width="50" height="50">
-        {% endif %}
         <p>{{annonce.cat_libelle}} <br>
             {{annonce.ann_description}} <br>
             {{annonce.ann_prix}} €<br>
@@ -20,10 +17,10 @@
             {{annonce.usr_telephone}}</p>
     </div>
     <div class="div-pdf">
-        <p class="add"><a href="http://popy/"><i class="fas fa-undo-alt"></i></a></p>
+        <p class="add"><a href="./"><i class="fas fa-undo-alt"></i></a></p>
         <h3>Enregister l'annonce :</h3>
         <p>Cliquez ci-dessous pour enregistrer l'annnoce au format pdf
-        <br><a id="pdf" href="/download-pdf?ann_unique_id={{ annonce.ann_unique_id }}"  class="add"><i class="fas fa-file-download"></i></a></p>
+        <br><a id="pdf" href="./download-pdf?ann_unique_id={{ annonce.ann_unique_id }}"  class="add"><i class="fas fa-file-download"></i></a></p>
     </div>
 </div>
 

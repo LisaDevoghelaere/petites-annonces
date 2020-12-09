@@ -4,18 +4,18 @@
 <div id="formValidation">
     <h2>Validez votre annonce</h2>
     <p>Voici l'annonce que vous nous avez envoyés, vous pouvez vérifier les différents champs puis  valider l'annonce qui sera alors publiée.</p>
-    <form id="valid" method="POST">
+    <form id="valid" method="POST" class="needs-validation" novalidate>
     <div class="form-group">
-            <label for="exampleFormControlInput1">Titre</label>
-            <input name="ann_titre" type="text" class="form-control" id="exampleFormControlInput1" value="{{ annonce.ann_titre }}" required>
+            <label for="valid-titre">Titre</label>
+            <input name="ann_titre" type="text" class="form-control" id="valid-titre" value="{{ annonce.ann_titre }}" required>
             <div class="invalid-feedback">
                     Veuillez entrer un titre
             </div>
     </div>
     <input name="crypto" type="hidden" class="form-control"  placeholder="crypto" value="{{ crypto }}">
     <div class="form-group">
-            <label for="">Catégorie</label>
-            <select name="cat_libelle" class="form-control" id="exampleFormControlSelect1" value="{{ annonce.cat_libelle }}" required>
+            <label for="valid-cat">Catégorie</label>
+            <select name="cat_libelle" class="form-control" id="valid-cat" value="{{ annonce.cat_libelle }}" required>
                 {% for element in categories %}
                         {% if element.cat_libelle == annonce.cat_libelle %}
                                 <option selected>{{ element.cat_libelle }}</option>
@@ -29,47 +29,47 @@
             </div>
     </div>
     <div class="form-group">
-            <label for="exampleFormControlTextarea1">Description</label>
-            <textarea name="ann_description" class="form-control" id="exampleFormControlTextarea1" value="{{ annonce.ann_description }}" rows="3" required>{{ annonce.ann_description }}</textarea>
+            <label for="valid-description">Description</label>
+            <textarea name="ann_description" class="form-control" id="valid-description" value="{{ annonce.ann_description }}" rows="3" required>{{ annonce.ann_description }}</textarea>
             <div class="invalid-feedback">
                     Veuillez entrer une description
             </div>
     </div>
         <div class="form-group">
-            <label for="">Prix</label>
-            <input name="ann_prix" type="text" class="form-control" id="exampleFormControlInput1" value="{{ annonce.ann_prix }}">
+            <label for="valid-prixl">Prix</label>
+            <input name="ann_prix" type="text" class="form-control" id="valid-prix" value="{{ annonce.ann_prix }}">
         </div>
     <div class="form-group">
-            <label for="">Votre nom</label>
-            <input name="usr_nom" type="text" class="form-control" id="exampleFormControlInput1" value="{{ annonce.usr_nom }}" required>
+            <label for="valid-name">Votre nom</label>
+            <input name="usr_nom" type="text" class="form-control" id="valid-name" value="{{ annonce.usr_nom }}" required>
             <div class="invalid-feedback">
                     Veuillez entrer un nom
             </div>
     </div>
     <div class="form-group">
-            <label for="">Votre prénom</label>
-            <input name="usr_prenom" type="text" class="form-control" id="exampleFormControlInput1" value="{{ annonce.usr_prenom }}" required>
+            <label for="valid-prenom">Votre prénom</label>
+            <input name="usr_prenom" type="text" class="form-control" id="valid-prenom" value="{{ annonce.usr_prenom }}" required>
             <div class="invalid-feedback">
                     Veuillez entrer un prénom
             </div>
     </div>
     <div class="form-group">
-            <label for="">Votre courriel</label>
-            <input name="usr_courriel" type="email" class="form-control" id="exampleFormControlInput1" value="{{ annonce.usr_courriel }}" required>
+            <label for="valid-mail">Votre courriel</label>
+            <input name="usr_courriel" type="email" class="form-control" id="valid-mail" value="{{ annonce.usr_courriel }}" required>
             <div class="invalid-feedback">
                     Veuillez entrer un courriel
             </div>
     </div>
     <div class="form-group">
-            <label for="">Votre numéro de téléphone</label>
-            <input name="usr_telephone" type="text" class="form-control" id="exampleFormControlInput1" value="{{ annonce.usr_telephone }}" required>
+            <label for="valid-phone">Votre numéro de téléphone</label>
+            <input name="usr_telephone" type="text" class="form-control" id="valid-phone" value="{{ annonce.usr_telephone }}" required>
             <div class="invalid-feedback">
                     Veuillez entrer un numéro de téléphone
             </div>
     </div>
     <div class="form-group">
-            <label for="">{{ annonce.ann_image_url }}</label>
-            <input name="file" type="file" class="form-control" id="exampleFormControlInput1">
+            <label for="valid-file">{{ annonce.ann_image_url }}</label>
+            <input name="file" type="file" class="form-control" id="valid-file">
             <input name="ann_image_url" type="hidden" value="{{ annonce.ann_image_url }}">
     </div>
        
@@ -77,8 +77,8 @@
     </form>
 </div>
 <div id="modal" class="hidden">
-        <div id="modal_dialogue">
-        <button type="submit" class="btn btn-lg" id="btnModal"> Votre annonce a bien été validée</button>
+        <div id="modal_dialogue" class="bg-light rounded">
+        <a href="/popy" type="submit" class="btn btn-secondary btn-block" id="btnModal"> Votre annonce a bien été validée</a>
         </div>
 </div>
 

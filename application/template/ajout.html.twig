@@ -1,20 +1,20 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-<p class="add retour-ajout"><a href="http://popy/"><i class="fas fa-undo-alt"></i></a></p>
+<p class="add retour-ajout"><a href="./"><i class="fas fa-undo-alt"></i></a></p>
 
 <form id="add" method="POST" class="needs-validation" novalidate>
 <div class="form-group">
-        <label for="exampleFormControlInput1">Titre de l'annonce</label>
-        <input name="ann_titre" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Titre de votre annonce" required>
+        <label for="titre-valid">Titre de l'annonce</label>
+        <input name="ann_titre" type="text" class="form-control" id="titre-valid" placeholder="Titre de votre annonce" required>
         <div class="invalid-feedback">
                 Veuillez entrer un titre
         </div>
 </div>
 
 <div class="form-group">
-        <label for="">Catégorie</label>
-        <select name="cat_libelle" class="form-control" id="" required>
+        <label for="cat-valid">Catégorie</label>
+        <select name="cat_libelle" class="form-control" id="cat-valid" required>
                 <option value="0" selected>Catégories</option>
                 <option value="Vêtement">Vêtement</option>
                 <option value="meuble">meuble</option>
@@ -30,47 +30,47 @@
         </div>
 </div>
 <div class="form-group">
-        <label for="exampleFormControlTextarea1">Entrez une description</label>
-        <textarea name="ann_description" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+        <label for="description-valid">Entrez une description</label>
+        <textarea name="ann_description" class="form-control" id="description-valid" rows="3" required></textarea>
         <div class="invalid-feedback">
                 Veuillez entrer une description
         </div>
 </div>
     <div class="form-group">
-        <label for="">Prix (non obligatoire)</label>
-        <input name="ann_prix" type="text" class="form-control" id="exampleFormControlInput1" placeholder="5">
+        <label for="prix-valid">Prix (non obligatoire)</label>
+        <input name="ann_prix" type="text" class="form-control" id="prix-valid" placeholder="5">
     </div>
 <div class="form-group">
-        <label for="">Votre nom</label>
-        <input name="usr_nom" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Dupuis" required>
+        <label for="name-valid">Votre nom</label>
+        <input name="usr_nom" type="text" class="form-control" id="name-valid" placeholder="Dupuis" required>
         <div class="invalid-feedback">
                 Veuillez entrer un nom
         </div>
 </div>
 <div class="form-group">
-        <label for="">votre prénom</label>
-        <input name="usr_prenom" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Harry" required>
+        <label for="prenom-valid">Votre prénom</label>
+        <input name="usr_prenom" type="text" class="form-control" id="prenom-valid" placeholder="Harry" required>
         <div class="invalid-feedback">
                 Veuillez entrer un prénom
         </div>
 </div>
 <div class="form-group">
-        <label for="">votre courriel</label>
-        <input name="usr_courriel" type="email" class="form-control" id="exampleFormControlInput1" placeholder="rincevent@example.com" required>
+        <label for="mail-valid">Votre courriel</label>
+        <input name="usr_courriel" type="email" class="form-control" id="mail-valid" placeholder="rincevent@example.com" required>
         <div class="invalid-feedback">
                 Veuillez entrer un courriel
         </div>
 </div>
 <div class="form-group">
-        <label for="">votre numéro de téléphone</label>
-        <input name="usr_telephone" type="text" class="form-control" id="exampleFormControlInput1" placeholder="0123456789" required>
+        <label for="tel-valid">Votre numéro de téléphone</label>
+        <input name="usr_telephone" type="text" class="form-control" id="tel-valid" placeholder="0123456789" required>
         <div class="invalid-feedback">
                 Veuillez entrer un numéro de téléphone
         </div>
 </div>
 <div class="form-group">
-        <label for="">Chargez une image (non obligatoire)</label>
-        <input name="file" type="file" class="form-control" id="exampleFormControlInput1" placeholder="uploadez une image">
+        <label>Chargez une image (non obligatoire)</label>
+        <input name="file" type="file" class="form-control" placeholder="uploadez une image">
 </div>
    
 <button id="envoyer" class="btn btn-secondary btn-lg btn-block">Envoyer</button>
@@ -79,6 +79,27 @@
 {% endblock %}
 
 {% block javascripts %}
+        <script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
         <script src="js/soumission.js"></script>
+
 
 {% endblock javascripts %}
