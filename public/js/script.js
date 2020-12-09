@@ -14,7 +14,7 @@ function affichage(){
     //la requête ajax
     let xhr = new XMLHttpRequest();
     //methode d'envoi, chemin, true
-    xhr.open('POST', '/choixcategorie', true);
+    xhr.open('POST', './choixcategorie', true);
     //on envoi avec en valeur data, notre objet "formulaire"
     xhr.send(data);
     //où on en est dans les étapes et les fonction qu'on lui attribut
