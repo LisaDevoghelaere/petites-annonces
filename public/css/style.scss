@@ -107,7 +107,7 @@ footer{
 .mini-carte{
     width: 33rem;
     height : 8.75rem;
-    background-color: $blanc;
+    background-color: white;
     display : flex;
     align-content: center;
     justify-content: left;
@@ -132,11 +132,12 @@ footer{
     display : block;
 }
 .contenant-txt{
-    background-color: $blanc;
+    background-color: white;
     padding-left: 0.8rem;
     padding-right: 1rem;
     box-sizing: border-box;
-    max-width: 55%;
+    width: 55%;
+    
 }
 .carte-titre{
     font-size: 1.5rem;
@@ -173,6 +174,7 @@ h2{
     margin : 2rem;
     padding : 1.5rem;
     border : solid 1px $saumon;
+    background-color: white;
     border-radius: 10px;
     max-width: 500px;
 }
@@ -199,7 +201,7 @@ h2{
 }
 /*--------------------------Validation----------------------*/
 #modal{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -216,15 +218,20 @@ h2{
     width: 100%;
     max-width : 33rem;
     max-height : 10rem;
-    background-color: $blanc;
-    border : 1px solid salmon;
+    //background-color: $blanc;
+    border : 1px solid $saumon;
     border-radius: 3px;
     text-align: center;
-    button{
+    #btnModal{
         background-color : $saumon;
         color : $blanc;
         cursor : pointer;
     }
+}
+.annonce_suppr{
+    font-size : 2rem;
+    font-weight : 700;
+    margin : 3rem;
 }
 @media#{$smartphone}{
     //-------------------------------------Phone base--------------------------
@@ -270,11 +277,11 @@ footer{
     .mini-carte{
         width: 21.85rem;
         height : 8.75rem;
-        background-color: $blanc;
+        background-color: white;
         display : flex;
         align-content: center;
         justify-content: left;
-        border : 1px solid salmon;
+        border : 1px solid $saumon;
         border-radius: 3px;
         margin : 0.8rem;
     }
@@ -323,6 +330,7 @@ footer{
     margin : 1rem;
     padding : 1rem;
     border : solid 1px $saumon;
+    background-color: white;
     border-radius: 10px;
     max-width: 350px;
 }

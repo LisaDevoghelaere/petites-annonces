@@ -7,14 +7,15 @@ console.log(validForm);
 validForm.addEventListener('submit', (e) => {
     e.preventDefault();
     var formdata = new FormData(validForm);
-    fetch('/ajax-valider', { method : "post", body : formdata })
+    fetch('./ajax-valider', { method : "post", body : formdata })
     .then( response => response.json().then( data =>{
             const modalOn = document.querySelector('#modal');
             modalOn.classList.remove('hidden');
             const btnModal = document.querySelector('#btnModal');
             console.log(xhr.responseText);
             if(data == '"OK"'){
-                btnModal.innerHTML = 'Annonce confirmée<br/><a href="/">Retour à l\'accueil</a>'
+                btnModal.innerHTML = 'Annonce confirmée<br/><a href="/">Retour à l\'accueil</a>';
+                
             } else{
                 btnModal.innerHTML = 'Une erreur s\'est produite, merci de réessayer plus tard<br/><a href="/">Retour à l\'accueil</a>'
             }

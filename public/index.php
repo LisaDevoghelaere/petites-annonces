@@ -1,4 +1,6 @@
 <?php
+// define('BASE_PATH','') ;
+// define('SERVER_URI', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] .':' . $_SERVER['SERVER_PORT'] . BASE_PATH) ;
 
 require '../vendor/autoload.php';
 use App\Twig;
@@ -10,7 +12,9 @@ $uri = $_SERVER['REQUEST_URI'];
 // créer une instance
 $router = new AltoRouter();
 // projet dans sous dossier
-$router->setBasePath('');
+// $router->setBasePath(BASE_PATH);
+$router->setBasePath('/popy');
+
 
 
     // Page Liste des annonces index.html.twig
@@ -32,6 +36,8 @@ $router->setBasePath('');
         $twig->render([
                 'annonce' => $annonce->data[0],
                 'ann_unique_id' => $ann_unique_id,
+                // 'serveur_uri' => SERVER_URI
+               
                 
         ]);
         
@@ -39,14 +45,14 @@ $router->setBasePath('');
 
 
     // Page ajout
-    $router->map('GET', '/ajout', function (){
+    $router->map('GET', '/ajout', function(){
     //render template
     $twig = new Twig('ajout.html.twig');
     $twig->render();
-    
+        // 'serveur_uri' => SERVER_URI
     });
 
-    $router->map('POST', '/ajax-ajout', function (){
+    $router->map('POST', '/ajax-ajout', function(){
         \App\Ajout::add();
     });
     
@@ -66,8 +72,9 @@ $router->setBasePath('');
     //categories request
     $categories = new \App\Categories();
     $twig = new Twig('validation.html.twig');
+        $dataAnnonce = (isset($annonce->data[0]))?$annonce->data[0]:[];
         $twig->render([
-            'annonce' => $annonce->data[0],
+            'annonce' => $dataAnnonce,
             'categories' => $categories->data,
             'crypto' => $crypto,
             
@@ -87,7 +94,7 @@ $router->setBasePath('');
 
         $twig = new Twig('suppression.html.twig');
             $twig->render([
-                'crypto' => $crypto
+                'crypto' => $crypto,
             ]);
 
     });

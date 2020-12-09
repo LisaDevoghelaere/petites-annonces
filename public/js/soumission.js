@@ -11,9 +11,9 @@ envoyer.addEventListener('click', function(e){
     console.log(form);
 
 
-    fetch('/ajax-ajout', { method : "post", body : formdata })
+    fetch('./ajax-ajout', { method : "post", body : formdata })
     .then( response => response.json().then( data =>{
-        document.location.href="/"; 
+        document.location.href="/popy"; 
     }))
 })
 function validBoot() {
