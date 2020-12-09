@@ -234,6 +234,7 @@ class Ajout{
 
         public function Validation(){
 
+<<<<<<< HEAD
             // // Captcha
             // // Ma clé privée
             // $secret = "private_key";
@@ -252,6 +253,26 @@ class Ajout{
             // if($decode['success'] == false){
             // return 'CAPTCHA Invalide';
             // }
+=======
+            // Captcha
+            // Ma clé privée
+            $secret = "private_key";
+            // Paramètre renvoyé par le recaptcha
+            $response = $_POST['g-recaptcha-response'];
+            // On récupère l'IP de l'utilisateur
+            $remoteip = $_SERVER['REMOTE_ADDR'];
+
+            $api_url = "https://www.google.com/recaptcha/api/siteverify?secret="
+            . $secret
+            . "&response=" . $response
+            . "&remoteip=" . $remoteip ;
+
+            $decode = json_decode(file_get_contents($api_url), true);
+
+            if($decode['success'] == false){
+            return 'CAPTCHA Invalide';
+            }
+>>>>>>> ed670342468b20bcdb6fbacbde0a87947cf2608e
 
 
             if(isset($_POST['ann_titre']) && !empty($_POST['ann_titre'])){
