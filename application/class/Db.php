@@ -7,18 +7,19 @@ class Db {
 	private $password;
 	private $connect;
 
-	public function __construct(){
+	 public function __construct(){
 		$this->login = 'root';
-		$this->password = '';
-		$this->db = 'popy';
-		$this->connection();
+	 	$this->password = '';
+	 	$this->db = 'popy';
+	 	$this->connection();
 	}
+	
 
 	private function connection(){
 		try
 		{
 	    	$bdd = new \PDO(
-                'mysql:host=localhost;dbname='.$this->db.';charset=utf8mb4',
+                'mysql:host=localhost;dbname='.$this->db.';charset=utf8mb4', 
                 $this->login,
                 $this->password
             );

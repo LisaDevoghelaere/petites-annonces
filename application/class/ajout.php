@@ -10,7 +10,7 @@ class Ajout{
 
 
             // $validation= (new self)->Validation();
-            $path = './media/annonce/';
+            $path = '/media/annonce/';
 
             //charger l'image
             if($_FILES['file']['name']!==''){
@@ -25,7 +25,7 @@ class Ajout{
                     return;
                 }
             }else{
-                $ann_image_url ='./media/logo/back-popy.png';
+                $ann_image_url ='/media/logo/back-popy.png';
             }
 
 
@@ -118,7 +118,7 @@ class Ajout{
 
             // $validation= (new self)->Validation();
     
-            $path = './media/annonce/';
+            $path = '/media/annonce/';
 
             //charger l'image
             if($_FILES['file']['name']!==''){
@@ -234,26 +234,26 @@ class Ajout{
 
         public function Validation(){
 
-            // Captcha
-            // Ma clé privée
-            $secret = "private_key";
-            // Paramètre renvoyé par le recaptcha
-            $response = $_POST['g-recaptcha-response'];
-            // On récupère l'IP de l'utilisateur
-            $remoteip = $_SERVER['REMOTE_ADDR'];
+            // // Captcha
+            // // Ma clé privée
+            // $secret = "private_key";
+            // // Paramètre renvoyé par le recaptcha
+            // $response = $_POST['g-recaptcha-response'];
+            // // On récupère l'IP de l'utilisateur
+            // $remoteip = $_SERVER['REMOTE_ADDR'];
 
-            $api_url = "https://www.google.com/recaptcha/api/siteverify?secret="
-            . $secret
-            . "&response=" . $response
-            . "&remoteip=" . $remoteip ;
+            // $api_url = "https://www.google.com/recaptcha/api/siteverify?secret="
+            // . $secret
+            // . "&response=" . $response
+            // . "&remoteip=" . $remoteip ;
 
-            $decode = json_decode(file_get_contents($api_url), true);
+            // $decode = json_decode(file_get_contents($api_url), true);
 
-            if($decode['success'] == false){
-            return 'CAPTCHA Invalide';
-            }
+            // if($decode['success'] == false){
+            // return 'CAPTCHA Invalide';
+            // }
 
-            
+
             if(isset($_POST['ann_titre']) && !empty($_POST['ann_titre'])){
                 if(v::stringVal()->validate($_POST['ann_titre']) == false){
                     return 'Titre invalide';
@@ -264,7 +264,7 @@ class Ajout{
     
             if(isset($_POST['ann_description']) && !empty($_POST['ann_description'])){
                 if(v::stringVal()->validate($_POST['ann_description']) == false){
-                    return 'Déscription invalide';
+                    return 'Description invalide';
                 }
             }else{
                 return 'Veuillez entrer une description';
@@ -316,7 +316,7 @@ class Ajout{
         //function pour charger l'image
         public function ChargerImage($code,$extension){
             $files_tmp = $_FILES['file']['tmp_name'];
-            $url = './media/annonce';
+            $url = '/media/annonce';
             $newName = basename($code.'.'.$extension);
             $path = "$url" . '/' . "$newName";
             move_uploaded_file($files_tmp, $path);

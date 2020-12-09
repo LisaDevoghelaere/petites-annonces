@@ -27,7 +27,7 @@ class AjaxCarte{
 
         
         // render template
-        $template = $twig->load('/carte-annonce.html.twig');
+        $template = $twig->load('carte-annonce.html.twig');
         echo $template->render(array(
             'liste' => $liste
         ));
